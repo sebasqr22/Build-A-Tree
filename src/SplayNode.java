@@ -27,19 +27,18 @@ public class SplayNode {
     public SplayNode getRight() {
         return right;
     }
-
+    public SplayNode getParent() {
+        return parent;
+    }
     public void setDato(int dato) {
         this.dato = dato;
     }
-
     public void setParent(SplayNode parent) {
         this.parent = parent;
     }
-
     public void setRight(SplayNode right) {
         this.right = right;
     }
-
     public void setLeft(SplayNode left) {
         this.left = left;
     }
