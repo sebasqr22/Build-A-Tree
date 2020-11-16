@@ -1,4 +1,6 @@
-import javax.swing.*;
+package tec.buildatree.trees.Splaytree;
+
+import tec.buildatree.trees.Splaytree.SplayNode;
 
 /**
  * Clase que crea el árbol con los métodos necesarios para el juego
