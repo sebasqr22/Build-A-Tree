@@ -5,6 +5,8 @@ import tec.buildatree.trees.Splaytree.SplayNode;
 /**
  * Clase que crea el árbol con los métodos necesarios para el juego
  * y las diferentes rotaciones
+ *
+ * basado en https://www.sanfoundry.com/java-program-implement-splay-tree/
  */
 
 public class SplayTree {
@@ -33,7 +35,7 @@ public class SplayTree {
             }
         }
         //---------------------------------termina el proceso de comparación-------------------------------
-        rootaux = new SplayNode();//al finalizar el proceso de comparación resetea rootaux
+        rootaux = new SplayNode();
         rootaux.setDato(dato);//le dá el dato al nuevo nodo
         rootaux.setParent(aux);//le da un padre al nuevo nodo que será la útima declaración del ciclo anterior
 
@@ -67,10 +69,10 @@ public class SplayTree {
         if(child.getRight()!=null){//si child tiene hijos
             child.getRight().setParent(parent);//se le otorga el hijo de child a parent como hijo derecho
         }
-        child.setParent(parent.getParent());//se hace el intercambio de parent por child
-        parent.setParent(child);//el padre de parent ahora será child
-        parent.setLeft(child.getRight());//el hijo izquierdo de parent será el hijo derecho de child
-        child.setRight(parent);//el hijo izquierdo de child será parent
+        child.setParent(parent.getParent());
+        parent.setParent(child);
+        parent.setLeft(child.getRight());
+        child.setRight(parent);
     }
     /**
      * Rotación simple de un hijo derecho
@@ -123,15 +125,15 @@ public class SplayTree {
 
                     if(parent==grandparent.getLeft()){//si gran parent es el hijo izquierdo
                         /**rotación zig zig izquierda**/
-                        zigleft(parent,grandparent);//sustituye a grandparent por parent dándole sus hijos si los tuviera
-                        zigleft(rootaux,parent);//sustituye el parent nuevo por el nodo que se quiere en la raíz
+                        zigleft(parent,grandparent);
+                        zigleft(rootaux,parent);
                     }else {
                         /**rotacion zig zag izquierda derecha**/
                         zigleft(rootaux,rootaux.getParent());
                         zigright(rootaux,rootaux.getParent());
                     }
                 }else {//si el nodo a rotar es un hijo derecho de parent
-                    if(parent== grandparent.getLeft()){//si parent es un hijo izquierdo
+                    if(parent== grandparent.getLeft()){
                         /**rotación zig zag derecha izquierda **/
                         zigright(rootaux,rootaux.getParent());
                         zigleft(rootaux, rootaux.getParent());
@@ -144,6 +146,66 @@ public class SplayTree {
             }
         }
         this.root = rootaux;//se crea el nuevo root depués de las diferentes rotaciones
+    }
+    /**
+     * Método que busca un elemnto en el árbol y lo pone en el root luego de encontrarlo*/
+    public SplayNode search(int dato){
+        SplayNode aux = null;//guarda el nodo anterior
+        SplayNode rootaux = this.root;
+
+        while (rootaux!=null){
+            aux = rootaux;
+            if(dato>rootaux.getDato()){//si el dato es mayor se sigue buscando a la derecha
+                rootaux = rootaux.getRight();
+            }else if(dato<rootaux.getDato()) {//si el dato es menor se va a la izquierda
+                rootaux = rootaux.getLeft();
+            }else if(dato==rootaux.getDato()){//si es igual retorna el nodo y lo pone en el root
+                Splay(rootaux);
+                return rootaux;
+            }
+        }
+        if (aux!=null){//si aun existe el nodo anterior
+            Splay(aux);//es el último nodo que se comparó y va a la raíz.
+            return null;
+        }
+        return null;//no lo encontró
+    }
+    /**Método que remueve un nodo**/
+    public void remove(int dato){
+        SplayNode nodo = search(dato);
+
+        if(nodo==null){//si el nodo no existe se termina la operación
+            return;
+        }
+        Splay(nodo);//lo hago raíz
+        if((nodo.getLeft() != null)&&(nodo.getRight()!=null)){//si nodo tiene dos hijos
+            SplayNode low = nodo.getLeft();
+            while (low.getRight()!=null){
+                low = low.getLeft();
+            }
+            low.setRight(nodo.getRight());//la derecha del menor será la derecha del nodo
+            nodo.getRight().setParent(low);//le da el hijo izquierdo a la raíz
+            nodo.getLeft().setParent(null);//le dá el hijo izquierdo a la raíz
+            this.root = nodo.getLeft();//la raíz será el elemento izquierdo del nodo
+        }else if(nodo.getRight()!=null){
+            nodo.getRight().setParent(null);
+            this.root = nodo.getRight();
+        }else if(nodo.getLeft()!=null){
+            nodo.getLeft().setParent(null);
+            this.root = nodo.getLeft();
+        }else {
+            this.root = null;
+        }
+
+        nodo.setParent(null);
+        nodo.setLeft(null);
+        nodo.setRight(null);
+        nodo = null;
+        this.size--;//le resta a la cantidad de nodos
+    }
+    public void clear(){
+        this.root = null;
+        this.size = 0;
     }
 
 }
