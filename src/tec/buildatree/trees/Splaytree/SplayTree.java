@@ -57,7 +57,7 @@ public class SplayTree {
      */
     private void zigleft(SplayNode child,SplayNode parent){
         if((child==null) || (parent==null)||(parent.getLeft()!=child)||(child.getParent()!=parent)){//revisa si el nodo child es el verdadero hijo izquierdo
-            System.out.println("Error en la rotación, los nodos dados son incorrectos");
+            System.out.println("Error en la rotación zigleft, los nodos dados son incorrectos");
         }
         if(parent.getParent()!=null){//si parent es un nodo hijo
             if(parent == parent.getParent().getLeft()){//si parent es el hijo izquierdo
@@ -81,7 +81,7 @@ public class SplayTree {
      */
     private void zigright(SplayNode child, SplayNode parent){
         if((child==null)||(parent==null)||(parent.getRight()!=child)||(child.getParent()!=parent)){
-            System.out.println("Error en la rotación, los nodos dados son incorrectos");
+            System.out.println("Error en la rotación zigright, los nodos dados son incorrectos");
         }
 
         if(parent.getParent()!=null){//si parent es un hijo
@@ -207,5 +207,16 @@ public class SplayTree {
         this.root = null;
         this.size = 0;
     }
+    public void recorrer(SplayNode nodo){
 
+        if(nodo!=null){
+            this.recorrer(nodo.getLeft());
+            System.out.println("["+nodo.getDato()+"]");
+            this.recorrer(nodo.getRight());
+        }
+    }
+
+    public SplayNode getRoot() {
+        return root;
+    }
 }

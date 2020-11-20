@@ -1,26 +1,36 @@
 
 import tec.buildatree.trees.Btree.Btree;
+import tec.buildatree.trees.Splaytree.SplayNode;
+import tec.buildatree.trees.Splaytree.SplayTree;
 
 public class test {
     public static void main(String[] args) {
-        Btree b = new Btree(3);
-        b.insert(8);
-        b.insert(9);
-        b.insert(10);
-        b.insert(11);
-        b.insert(15);
-        //b.insert(20);
-        //b.insert(17);
-        //b.insert(56);
-        //b.insert(34);
+        SplayTree ar = new SplayTree();
+        Btree arr = new Btree(3);
 
-        b.Show();
-        if (b.contains(15)) {
-            System.out.println("\nfound");
-        } else {
-            System.out.println("\nnot found");
-        }
+        System.out.println("Comenzando");
+        ar.Insert(34);
+        ar.Insert(23);
+        ar.Insert(1);
+        ar.Insert(222);
+        ar.Insert(333);
+        ar.Insert(234);
+
+        ar.recorrer(ar.getRoot());
+
+        System.out.println(ar.getSize());
+        System.out.println("------------------------------------------------");
+
+        arr.insert(8);
+        arr.insert(9);
+        arr.insert(10);
+        arr.insert(11);
+        arr.insert(15);
+        arr.insert(20);
+        arr.insert(17);
+
+        arr.Show();
+
     }
-
 
 }

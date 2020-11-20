@@ -3,7 +3,8 @@ package tec.buildatree.trees.Btree;
 /**
  * Clase para crear un árbol B normal
  *
- * basado en https://turing.plymouth.edu/~zshen/Webfiles/notes/CS322/CodeSample/com/mhhe/clrs2e/BTree.java
+ * basado en https://turing.plymouth.edu/~zshen/Webfiles/notes/CS322/CodeSample/com/mhhe/clrs2e/BTree.java]
+ * basado en https://www.programiz.com/dsa/insertion-into-a-b-tree
  * @author Bryan
  */
 
@@ -40,7 +41,6 @@ public class Btree {
         this.grado = grado;
         this.maxclaves = 2*grado-1;
         this.root = new Bnode(0);//es una hoja
-        this.root.leaf=true;
         //se escribe en el disco
     }
     /**Busca una clave dentro de el nodo**/
@@ -111,7 +111,7 @@ public class Btree {
             Bnode node = new Bnode(0);
             this.root = node;
             node.leaf = false;
-            node.childs[0]=rootaux;
+            node.childs[0] = rootaux;
             Split(node,0,rootaux);
             insertvalue(node,clave);
         }else{
@@ -130,10 +130,11 @@ public class Btree {
             x.size = x.size+1;
             //se escribe en disco
         }else {
-            int index = 0;
+            int index = x.size-1;
             //encuentra el al que decendemos
-            for(index=x.size-1;index>=0&&clave<x.claves[index];index--){
-            };
+            while (index>=0&&clave<x.claves[index]){
+                index--;
+            }
             index++;
             Bnode temp = x.childs[index];
             if(temp.size == maxclaves){
@@ -162,13 +163,12 @@ public class Btree {
     }
 
     public void show(Bnode aux){
-        assert (aux == null);
-        for (int i = 0; i <aux.size;i++){
-            System.out.println("["+aux.claves[i]+"]"+i);
-
+        assert (aux==null);
+        for(int i = 0 ; i < aux.size;i++){
+            System.out.print(aux.claves[i]+" ");
         }
         if (!aux.leaf){
-            for (int i = 0;i<aux.size+1;i++){
+            for (int i = 0; i<aux.size+1;i++){
                 show(aux.childs[i]);
             }
         }
