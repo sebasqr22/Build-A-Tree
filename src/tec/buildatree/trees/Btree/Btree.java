@@ -1,5 +1,5 @@
-package tec.buildatree.trees.Btree;
 
+package tec.buildatree.trees.Btree;
 /**
  * Clase para crear un árbol B normal
  *
@@ -7,7 +7,6 @@ package tec.buildatree.trees.Btree;
  * basado en https://www.programiz.com/dsa/insertion-into-a-b-tree
  * @author Bryan
  */
-
 public class Btree {
     private Bnode root;
 

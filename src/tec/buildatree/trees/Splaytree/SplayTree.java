@@ -10,8 +10,8 @@ import tec.buildatree.trees.Splaytree.SplayNode;
  */
 
 public class SplayTree {
-    SplayNode root;
-    int size;
+    private SplayNode root;
+    private int size;
 
     public boolean isEmpty(){
         return root == null;
