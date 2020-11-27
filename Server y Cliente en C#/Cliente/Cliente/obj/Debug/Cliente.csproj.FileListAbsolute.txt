@@ -1,0 +1,10 @@
+C:\Users\sebas\Desktop\Cliente\Cliente\bin\Debug\Cliente.exe.config
+C:\Users\sebas\Desktop\Cliente\Cliente\bin\Debug\Cliente.exe
+C:\Users\sebas\Desktop\Cliente\Cliente\bin\Debug\Cliente.pdb
+C:\Users\sebas\Desktop\Cliente\Cliente\obj\Debug\Cliente.csprojAssemblyReference.cache
+C:\Users\sebas\Desktop\Cliente\Cliente\obj\Debug\Cliente.Form1.resources
+C:\Users\sebas\Desktop\Cliente\Cliente\obj\Debug\Cliente.Properties.Resources.resources
+C:\Users\sebas\Desktop\Cliente\Cliente\obj\Debug\Cliente.csproj.GenerateResource.cache
+C:\Users\sebas\Desktop\Cliente\Cliente\obj\Debug\Cliente.csproj.CoreCompileInputs.cache
+C:\Users\sebas\Desktop\Cliente\Cliente\obj\Debug\Cliente.exe
+C:\Users\sebas\Desktop\Cliente\Cliente\obj\Debug\Cliente.pdb
