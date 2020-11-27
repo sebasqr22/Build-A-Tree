@@ -1,5 +1,3 @@
-package tec.buildatree.trees.Splaytree;
-
 /***
  * Clase nodo para el árbol splay, se crea con los indicadores de izquierda y
  * derecha nulos y el dato se inicializa en 0.

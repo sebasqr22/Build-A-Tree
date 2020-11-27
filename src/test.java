@@ -1,8 +1,3 @@
-
-import tec.buildatree.trees.Btree.Btree;
-import tec.buildatree.trees.Splaytree.SplayNode;
-import tec.buildatree.trees.Splaytree.SplayTree;
-
 public class test {
     public static void main(String[] args) {
         SplayTree ar = new SplayTree();

@@ -1,5 +1,3 @@
-
-package tec.buildatree.trees.Btree;
 /**
  * Clase para crear un árbol B normal
  *
