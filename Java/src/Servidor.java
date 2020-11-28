@@ -5,7 +5,10 @@
  */
 
 import javax.swing.*;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -53,6 +56,10 @@ public class Servidor extends javax.swing.JFrame implements Runnable{
         );
 
         pack();
+
+        Thread entradaDatos = new Thread(this);
+
+        entradaDatos.start();
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -94,34 +101,66 @@ public class Servidor extends javax.swing.JFrame implements Runnable{
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea texto;
 
+    public DataInputStream ingreso;
+
+    public DataOutputStream salida;
+
     @Override
     public void run() {
+        System.out.println("-----Entra-----");
+        Socket target;
+
         while (true){
 
             try {
                 ServerSocket servidor = new ServerSocket(10101);
 
-                String mensaje;
+                System.out.println("---Servidor--escuchando---");
 
-                Socket llegadaServidor = servidor.accept();
+                target = servidor.accept();
 
-                texto.append("Llego: ");
+                ingreso = new DataInputStream(target.getInputStream());
 
-                llegadaServidor.close();
+                salida = new DataOutputStream(target.getOutputStream());
 
-                // -------socket--de--envio------
+                byte[] lista = new byte[1];
 
-                Socket envio = new Socket("127.0.0.1", 10);
+                ingreso.read(lista, 0, lista.length);
 
-                // crear el objeto de envio
-
-                envio.close();
-
+                if (lista[0] == 2){
+                    System.out.println(new String(leerLlegada()));
+                }
 
             } catch (IOException e) {
-                JOptionPane.showMessageDialog(texto, "No fue posible crear el servidor, reinicie la aplicacion");
+                e.printStackTrace();
             }
         }
+    }
+    private byte[] leerLlegada() throws IOException {
+        byte[] datos = null;
+
+        int contador = 0;
+
+        String tamañoDatos = "";
+
+        while((contador=ingreso.read())!=4){
+            tamañoDatos += (char)contador;
+        }
+        int tamaño = Integer.parseInt(tamañoDatos);
+
+        datos = new byte[Integer.parseInt(tamañoDatos)];
+
+        int leerDatos = 0;
+
+        int byteOff = 0;
+
+        while(byteOff < tamaño){
+            leerDatos = ingreso.read(datos, byteOff, tamaño-byteOff);
+
+            byteOff += leerDatos;
+        }
+
+        return datos;
     }
     // End of variables declaration//GEN-END:variables
 }
