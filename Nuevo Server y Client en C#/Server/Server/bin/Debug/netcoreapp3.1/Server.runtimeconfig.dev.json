@@ -1,8 +1,0 @@
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-      "C:\\Users\\quigo\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\quigo\\.nuget\\packages"
-    ]
-  }
-}
