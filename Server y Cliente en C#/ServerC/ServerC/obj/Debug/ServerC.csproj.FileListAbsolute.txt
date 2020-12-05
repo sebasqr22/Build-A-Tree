@@ -8,3 +8,13 @@ C:\Users\sebas\Desktop\ServerC\ServerC\obj\Debug\ServerC.csproj.GenerateResource
 C:\Users\sebas\Desktop\ServerC\ServerC\obj\Debug\ServerC.csproj.CoreCompileInputs.cache
 C:\Users\sebas\Desktop\ServerC\ServerC\obj\Debug\ServerC.exe
 C:\Users\sebas\Desktop\ServerC\ServerC\obj\Debug\ServerC.pdb
+C:\Users\sebas\Desktop\Build-A-Tree\Server y Cliente en C#\ServerC\ServerC\bin\Debug\ServerC.exe.config
+C:\Users\sebas\Desktop\Build-A-Tree\Server y Cliente en C#\ServerC\ServerC\bin\Debug\ServerC.exe
+C:\Users\sebas\Desktop\Build-A-Tree\Server y Cliente en C#\ServerC\ServerC\bin\Debug\ServerC.pdb
+C:\Users\sebas\Desktop\Build-A-Tree\Server y Cliente en C#\ServerC\ServerC\obj\Debug\ServerC.csprojAssemblyReference.cache
+C:\Users\sebas\Desktop\Build-A-Tree\Server y Cliente en C#\ServerC\ServerC\obj\Debug\ServerC.Form1.resources
+C:\Users\sebas\Desktop\Build-A-Tree\Server y Cliente en C#\ServerC\ServerC\obj\Debug\ServerC.Properties.Resources.resources
+C:\Users\sebas\Desktop\Build-A-Tree\Server y Cliente en C#\ServerC\ServerC\obj\Debug\ServerC.csproj.GenerateResource.cache
+C:\Users\sebas\Desktop\Build-A-Tree\Server y Cliente en C#\ServerC\ServerC\obj\Debug\ServerC.csproj.CoreCompileInputs.cache
+C:\Users\sebas\Desktop\Build-A-Tree\Server y Cliente en C#\ServerC\ServerC\obj\Debug\ServerC.exe
+C:\Users\sebas\Desktop\Build-A-Tree\Server y Cliente en C#\ServerC\ServerC\obj\Debug\ServerC.pdb

@@ -4,43 +4,40 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.Socket;
 
-public class Cliente {
-     public static void main(String[] args) throws IOException {
-         Cliente objeto = new Cliente();
+public class Cliente{
+    public static void main(String[] args){
+        try {
+            Cliente objeto = new Cliente();
+            Socket client = new Socket("127.0.0.1", 9200);
+            DataInputStream entrada = new DataInputStream(client.getInputStream());
+            DataOutputStream salida = new DataOutputStream(client.getOutputStream());
+            byte[] lista = objeto.PaqueteEnvio("Hola".getBytes("UTF8"));
+            salida.write(lista);
+            salida.flush();
 
-         Socket cliente = new Socket("127.0.0.1", 10101);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    private byte[] PaqueteEnvio(byte[] datos){
+        byte[] paquete = null;
+        try {
+            byte[] inicial = new byte[1];
+            inicial[0] = 2;
+            byte[] separador = new byte[1];
+            separador[0] = 4;
+            byte[] largoDatos = String.valueOf(datos.length).getBytes("UTF8");
+            paquete = new byte[inicial.length + separador.length + largoDatos.length + datos.length];
 
-         DataInputStream input = new DataInputStream(cliente.getInputStream());
+            System.arraycopy(inicial, 0, paquete, 0, inicial.length);
+            System.arraycopy(largoDatos, 0, paquete, inicial.length, largoDatos.length);
+            System.arraycopy(separador, 0, paquete, inicial.length + largoDatos.length, separador.length);
+            System.arraycopy(datos, 0, paquete, inicial.length + largoDatos.length + separador.length, datos.length);
 
-         DataOutputStream out = new DataOutputStream(cliente.getOutputStream());
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
 
-         byte[] envio = objeto.CrearDatos("Hola".getBytes("UTF8"));
-
-         out.write(envio);
-     }
-     private byte[] CrearDatos(byte[] datos) throws UnsupportedEncodingException {
-         byte[] paqueteEnvio = null;
-
-         byte[] lista = new byte[1];
-         lista[0] = 2;
-
-         byte[] separador = new byte[1];
-         separador[0] = 4;
-
-         byte[] largo = String.valueOf(datos.length).getBytes("UTF8");
-
-         int tamaño3 = lista.length + largo.length + separador.length;
-
-         paqueteEnvio = new byte[lista.length + separador.length + largo.length + datos.length];
-
-         System.arraycopy(lista, 0, paqueteEnvio, 0, lista.length);
-
-         System.arraycopy(largo, 0, paqueteEnvio, 0, lista.length + largo.length);
-
-         //System.arraycopy(separador, 0, paqueteEnvio, 0, lista.length + separador.length);
-
-         System.arraycopy(datos, 0, paqueteEnvio, 0, lista.length + largo.length + separador.length + datos.length);
-
-         return paqueteEnvio;
-     }
+        return paquete;
+    }
 }

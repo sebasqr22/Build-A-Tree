@@ -35,16 +35,18 @@ namespace Cliente
             // 
             // mensajeTexto
             // 
-            this.mensajeTexto.Location = new System.Drawing.Point(72, 161);
+            this.mensajeTexto.Location = new System.Drawing.Point(96, 198);
+            this.mensajeTexto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mensajeTexto.Name = "mensajeTexto";
-            this.mensajeTexto.Size = new System.Drawing.Size(460, 20);
+            this.mensajeTexto.Size = new System.Drawing.Size(612, 22);
             this.mensajeTexto.TabIndex = 0;
             // 
             // boton
             // 
-            this.boton.Location = new System.Drawing.Point(265, 313);
+            this.boton.Location = new System.Drawing.Point(353, 385);
+            this.boton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.boton.Name = "boton";
-            this.boton.Size = new System.Drawing.Size(161, 59);
+            this.boton.Size = new System.Drawing.Size(215, 73);
             this.boton.TabIndex = 1;
             this.boton.Text = "Enviar";
             this.boton.UseVisualStyleBackColor = true;
@@ -52,13 +54,15 @@ namespace Cliente
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.boton);
             this.Controls.Add(this.mensajeTexto);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

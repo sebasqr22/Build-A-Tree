@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Sockets;
+using System.Threading;
+using System.Xml;
+using System.Xml.Serialization;
+
 
 
 namespace ServerC
@@ -27,8 +31,8 @@ namespace ServerC
 
         public void IniciarServer()
         {
+           
             Socket envio = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            Socket conexion;
             IPEndPoint conectar = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 9200);
 
             textArea.AppendText("\n " + "Escuchando al puerto");
@@ -36,7 +40,19 @@ namespace ServerC
             envio.Bind(conectar);
             envio.Listen(10);
 
-            conexion = envio.Accept();
+            Socket conexion = default(Socket);
+            int contador = 0;
+            Program clase = new Program();
+
+            while (true)
+            {
+                contador++;
+                conexion = envio.Accept();
+                Console.WriteLine("Cantidad de clientes conectados: " + contador);
+                Thread hiloPrincipal = new Thread(new ThreadStart(()=> programa.Usuario(cone))    );
+            }
+
+            
 
             textArea.AppendText("\n" + "Server Creado");
 
@@ -49,7 +65,16 @@ namespace ServerC
             Array.Resize(ref informacion, tamañoArray);
             data = Encoding.Default.GetString(informacion);
 
-            textArea.AppendText("\n" + "Mensaje que llego: " + data);
+            textArea.AppendText("Mensaje que llego: " + data);
+            Console.WriteLine(data);
+
+            envio.Close();
+
+        }
+
+        public void Usuario(Socket cliente)
+        {
+
         }
 
         private void button1_Click(object sender, EventArgs e)
