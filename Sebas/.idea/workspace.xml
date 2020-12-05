@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3539c2f3-4e56-4aed-9c6d-9ecac233efec" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/src/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java/src/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/src/Servidor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server y Cliente en C#/Cliente/.vs/Cliente/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/Server y Cliente en C#/Cliente/.vs/Cliente/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server y Cliente en C#/Cliente/Cliente/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server y Cliente en C#/Cliente/Cliente/Form1.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server y Cliente en C#/Cliente/Cliente/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server y Cliente en C#/Cliente/Cliente/Form1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server y Cliente en C#/Cliente/Cliente/bin/Debug/Cliente.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Server y Cliente en C#/Cliente/Cliente/bin/Debug/Cliente.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server y Cliente en C#/Cliente/Cliente/bin/Debug/Cliente.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Server y Cliente en C#/Cliente/Cliente/bin/Debug/Cliente.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server y Cliente en C#/Cliente/Cliente/obj/Debug/Cliente.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Server y Cliente en C#/Cliente/Cliente/obj/Debug/Cliente.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server y Cliente en C#/Cliente/Cliente/obj/Debug/Cliente.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Server y Cliente en C#/Cliente/Cliente/obj/Debug/Cliente.csproj.GenerateResource.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server y Cliente en C#/Cliente/Cliente/obj/Debug/Cliente.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Server y Cliente en C#/Cliente/Cliente/obj/Debug/Cliente.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server y Cliente en C#/Cliente/Cliente/obj/Debug/Cliente.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Server y Cliente en C#/Cliente/Cliente/obj/Debug/Cliente.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server y Cliente en C#/Cliente/Cliente/obj/Debug/Cliente.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Server y Cliente en C#/Cliente/Cliente/obj/Debug/Cliente.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server y Cliente en C#/ServerC/.vs/ServerC/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/Server y Cliente en C#/ServerC/.vs/ServerC/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server y Cliente en C#/ServerC/ServerC/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server y Cliente en C#/ServerC/ServerC/Form1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server y Cliente en C#/ServerC/ServerC/bin/Debug/ServerC.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Server y Cliente en C#/ServerC/ServerC/bin/Debug/ServerC.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server y Cliente en C#/ServerC/ServerC/bin/Debug/ServerC.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Server y Cliente en C#/ServerC/ServerC/bin/Debug/ServerC.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server y Cliente en C#/ServerC/ServerC/obj/Debug/ServerC.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Server y Cliente en C#/ServerC/ServerC/obj/Debug/ServerC.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server y Cliente en C#/ServerC/ServerC/obj/Debug/ServerC.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Server y Cliente en C#/ServerC/ServerC/obj/Debug/ServerC.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server y Cliente en C#/ServerC/ServerC/obj/Debug/ServerC.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Server y Cliente en C#/ServerC/ServerC/obj/Debug/ServerC.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server y Cliente en C#/ServerC/ServerC/obj/Debug/ServerC.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Server y Cliente en C#/ServerC/ServerC/obj/Debug/ServerC.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Build-A-Tree/Cliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/Servidor$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/Servidor.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ksdqeMImnICWnoiMf6UmbsJzqQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Prueba Server Array" />
+  </component>
+  <component name="RunManager" selected="Application.Cliente">
+    <configuration name="Cliente" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Cliente" />
+      <module name="Build-A-Tree" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Prueba" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Prueba" />
+      <module name="Build-A-Tree" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server" />
+      <module name="Build-A-Tree" />
+      <option name="VM_PARAMETERS" value="-Xmx2048m" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Servidor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Servidor" />
+      <module name="Build-A-Tree" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Cliente" />
+        <item itemvalue="Application.Server" />
+        <item itemvalue="Application.Prueba" />
+        <item itemvalue="Application.Servidor" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3539c2f3-4e56-4aed-9c6d-9ecac233efec" name="Default Changelist" comment="" />
+      <created>1606493429248</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606493429248</updated>
+      <workItem from="1606493430797" duration="3485000" />
+      <workItem from="1606529202741" duration="4079000" />
+      <workItem from="1606538349616" duration="22000" />
+      <workItem from="1606708421080" duration="879000" />
+      <workItem from="1606947560404" duration="7152000" />
+      <workItem from="1606970466061" duration="892000" />
+      <workItem from="1607016375841" duration="381000" />
+      <workItem from="1607134156469" duration="1031000" />
+      <workItem from="1607135218729" duration="678000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="510" y="85" key="#com.intellij.ide.util.MemberChooser" timestamp="1606964300833">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="510" y="85" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1606964300833" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1606949852160" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606950165611">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1606950165611" />
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1607134255541">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1607134255541" />
+    <state width="1323" height="195" key="GridCell.Tab.0.bottom" timestamp="1607135294155">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="195" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1607135294155" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606950140486" />
+    <state width="1323" height="195" key="GridCell.Tab.0.center" timestamp="1607135294153">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="195" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1607135294153" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606950140486" />
+    <state width="1323" height="195" key="GridCell.Tab.0.left" timestamp="1607135294153">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="195" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1607135294153" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606950140486" />
+    <state width="1323" height="195" key="GridCell.Tab.0.right" timestamp="1607135294153">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="195" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1607135294153" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606950140486" />
+    <state x="235" y="98" width="896" height="630" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1607134240635">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="235" y="98" width="896" height="630" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1607134240635" />
+    <state x="274" y="0" key="new project wizard" timestamp="1607016467054">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="274" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1607016467054" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.net.SocketException" package="java.net" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
