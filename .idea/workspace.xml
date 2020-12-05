@@ -27,6 +27,9 @@
       <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/Servidor$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/Servidor.class" beforeDir="false" />
     </list>
+
+    <list default="true" id="4777a6fa-06cc-4236-9917-502b51d3245a" name="Default Changelist" comment="" />
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,6 +59,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Prueba Server Array" />
@@ -116,10 +120,12 @@
       <workItem from="1607016375841" duration="381000" />
       <workItem from="1607134156469" duration="1031000" />
       <workItem from="1607135218729" duration="678000" />
+
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
+
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
@@ -174,5 +180,6 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+
   </component>
 </project>
