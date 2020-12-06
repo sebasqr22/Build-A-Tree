@@ -5,7 +5,6 @@
  */
 package buildatree;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -165,7 +164,7 @@ public class VisualServer extends javax.swing.JFrame implements Runnable{
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -215,6 +214,7 @@ public class VisualServer extends javax.swing.JFrame implements Runnable{
                 while(true){
                     Socket recibo = server.accept();
                     InputStream entrada = recibo.getInputStream();
+                    OutputStream salida = recibo.getOutputStream();
 
                     byte[] largoBytes = new byte[4];
                     entrada.read(largoBytes, 0, 4);
@@ -235,13 +235,27 @@ public class VisualServer extends javax.swing.JFrame implements Runnable{
                         textArea.append("\n" + "Creando nueva partida con 4 jugadores.....");
                         contadorPartidas ++;
                         partidasField.setText(String.valueOf(contadorPartidas));
-                        Cliente nuevoCliente = new Cliente();
-                        nuevoCliente.EnviarMensaje("PartidaCreada");
 
+                        String mensajeEnviado = "PartidaCreada";
+                        byte [] bytesEnviado = mensajeEnviado.getBytes();
+                        int lenEnviado = bytesEnviado.length;
+                        byte[] lenBytes = GetBytesLen(lenEnviado);
+                        salida.write(lenBytes);
+                        salida.write(bytesEnviado);
 
                         Partida nuevaPartida = new Partida();
                         nuevaPartida.CrearNuevaPartida(4);
                     }
+                    //Ejemplo
+                    else if (Partida.segundos > 9){
+                        String mensajeEnviado = "Create token tal"; //Agregar el string que vayamos a usar
+                        byte[] bytesEnviado = mensajeEnviado.getBytes();
+                        int lenEnviado = bytesEnviado.length;
+                        byte[] lenBytes = GetBytesLen(lenEnviado);
+                        salida.write(lenBytes);
+                        salida.write(bytesEnviado);
+                    }
+
 
                 }
             }
@@ -249,6 +263,15 @@ public class VisualServer extends javax.swing.JFrame implements Runnable{
         catch (IOException e){
             e.getMessage();
         }
+    }
+
+    private byte[] GetBytesLen(int largo){
+        byte [] largoBytesEnviado = new byte[4];
+        largoBytesEnviado[0] = (byte)(largo & 0xff);
+        largoBytesEnviado[1] = (byte)((largo >> 8) & 0xff);
+        largoBytesEnviado[2] = (byte)((largo >> 16) & 0xff);
+        largoBytesEnviado[3] = (byte)((largo >> 24) & 0xff);
+        return largoBytesEnviado;
     }
     // End of variables declaration//GEN-END:variables
 }

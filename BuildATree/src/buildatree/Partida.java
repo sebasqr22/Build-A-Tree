@@ -8,8 +8,8 @@ import java.util.Random;
 
 public class Partida{
     Timer contador;
-    int segundos;
-    int segundosChallenge;
+    static int segundos;
+    static int segundosChallenge;
     Timer challenge;
 
     int randomNumber = SeleccionarArbol();
@@ -33,13 +33,18 @@ public class Partida{
             public void actionPerformed(ActionEvent e) {
                 if(segundos > 9){
                     System.out.println("Timer 10 " + segundos);
+                    ReturnTimer(segundos);
                     segundos = 0;
                     System.out.println("Reiniciando");
                 }
                segundos ++;
+                ReturnTimer(segundos);
                 System.out.println("Timer 10 " + segundos);
             }
         });
+   }
+   public int ReturnTimer(int timer){
+        return timer;
    }
    public void TimerChallenge(){
        challenge = new Timer(1000, new ActionListener() {
@@ -47,6 +52,7 @@ public class Partida{
            public void actionPerformed(ActionEvent e) {
                if(segundosChallenge > 19){
                    System.out.println("Timer challenge" + segundosChallenge);
+                   TimerChallengeReturn(segundosChallenge);
                    segundosChallenge = 0;
                    System.out.println("Reiniciando");
                    randomNumber = SeleccionarArbol();
@@ -54,8 +60,12 @@ public class Partida{
                }
                segundosChallenge ++;
                System.out.println("Timer challenge" + segundosChallenge);
+               TimerChallengeReturn(segundosChallenge);
            }
        });
+   }
+   public int TimerChallengeReturn(int timer){
+        return timer;
    }
     public int SeleccionarArbol() {
 
