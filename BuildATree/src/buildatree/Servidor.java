@@ -53,4 +53,19 @@ public class Servidor implements Runnable{
     public OutputStream getOutput(){
         return salida;
     }
+
+    public void Cliente(String envio) throws IOException {
+        byte[] envioBytes = envio.getBytes();
+        int largoNuevo = envioBytes.length;
+
+        byte [] largoBytesEnviado = new byte[4];
+        largoBytesEnviado[0] = (byte)(largoNuevo & 0xff);
+        largoBytesEnviado[1] = (byte)((largoNuevo >> 8) & 0xff);
+        largoBytesEnviado[2] = (byte)((largoNuevo >> 16) & 0xff);
+        largoBytesEnviado[3] = (byte)((largoNuevo >> 24) & 0xff);
+
+        salida.write(largoBytesEnviado);
+        salida.write(envioBytes);
+    }
+
 }

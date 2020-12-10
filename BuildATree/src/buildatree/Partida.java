@@ -11,6 +11,7 @@ public class Partida{
     static int segundos;
     static int segundosChallenge;
     Timer challenge;
+    Boolean listoParaEnviar = false;
 
     int randomNumber = SeleccionarArbol();
 
@@ -32,10 +33,12 @@ public class Partida{
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(segundos > 9){
+                    listoParaEnviar = true;
                     System.out.println("Timer 10 " + segundos);
                     ReturnTimer(segundos);
                     segundos = 0;
                     System.out.println("Reiniciando");
+                    //listoParaEnviar = false;
                 }
                segundos ++;
                 ReturnTimer(segundos);
@@ -97,5 +100,8 @@ public class Partida{
         else{
             //crear splay
         }
+    }
+    public Boolean getEnviar(){
+        return listoParaEnviar;
     }
 }

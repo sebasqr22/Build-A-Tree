@@ -239,21 +239,57 @@ public class VisualServer extends javax.swing.JFrame implements Runnable{
                         String mensajeEnviado = "PartidaCreada";
                         byte [] bytesEnviado = mensajeEnviado.getBytes();
                         int lenEnviado = bytesEnviado.length;
-                        byte[] lenBytes = GetBytesLen(lenEnviado);
-                        salida.write(lenBytes);
+                        //byte[] lenBytes = GetBytesLen(lenEnviado);
+                        //salida.write(lenBytes);
                         salida.write(bytesEnviado);
-
-                        Partida nuevaPartida = new Partida();
-                        nuevaPartida.CrearNuevaPartida(4);
                     }
                     //Ejemplo
                     else if (Partida.segundos > 9){
                         String mensajeEnviado = "Create token tal"; //Agregar el string que vayamos a usar
                         byte[] bytesEnviado = mensajeEnviado.getBytes();
                         int lenEnviado = bytesEnviado.length;
-                        byte[] lenBytes = GetBytesLen(lenEnviado);
-                        salida.write(lenBytes);
+                        //byte[] lenBytes = GetBytesLen(lenEnviado);
+                        //salida.write(lenBytes);
                         salida.write(bytesEnviado);
+                    }
+
+                    else if(mensaje.equals("conexion2")){
+                        System.out.println("Entra conexion 2");
+                        String envio = "Listo para usar tokens";
+                        byte[] envioBytes = envio.getBytes();
+                        int largoNuevo = envioBytes.length;
+
+                        byte [] largoBytesEnviado = new byte[4];
+                        largoBytesEnviado[0] = (byte)(largoNuevo & 0xff);
+                        largoBytesEnviado[1] = (byte)((largoNuevo >> 8) & 0xff);
+                        largoBytesEnviado[2] = (byte)((largoNuevo >> 16) & 0xff);
+                        largoBytesEnviado[3] = (byte)((largoNuevo >> 24) & 0xff);
+
+                        salida.write(largoBytesEnviado);
+                        salida.write(envioBytes);
+
+                        textArea.append("\n" + "Listo para enviar tokens");
+                        Partida nuevaPartida = new Partida();
+                        nuevaPartida.CrearNuevaPartida(4);
+
+                        while(true){
+                            if (nuevaPartida.getEnviar()){
+                                textArea.append("Enviando token");
+                                String mensajeToken = "token";
+                                byte[] envioBytesToken = mensajeToken.getBytes();
+                                int largoNuevoToken = envioBytes.length;
+
+                                byte [] largoBytesEnviadoToken = new byte[4];
+                                largoBytesEnviadoToken[0] = (byte)(largoNuevoToken & 0xff);
+                                largoBytesEnviadoToken[1] = (byte)((largoNuevoToken >> 8) & 0xff);
+                                largoBytesEnviadoToken[2] = (byte)((largoNuevoToken >> 16) & 0xff);
+                                largoBytesEnviadoToken[3] = (byte)((largoNuevoToken >> 24) & 0xff);
+
+                                salida.write(largoBytesEnviadoToken);
+                                salida.write(envioBytesToken);
+                            }
+                        }
+
                     }
 
 
@@ -265,13 +301,6 @@ public class VisualServer extends javax.swing.JFrame implements Runnable{
         }
     }
 
-    private byte[] GetBytesLen(int largo){
-        byte [] largoBytesEnviado = new byte[4];
-        largoBytesEnviado[0] = (byte)(largo & 0xff);
-        largoBytesEnviado[1] = (byte)((largo >> 8) & 0xff);
-        largoBytesEnviado[2] = (byte)((largo >> 16) & 0xff);
-        largoBytesEnviado[3] = (byte)((largo >> 24) & 0xff);
-        return largoBytesEnviado;
-    }
+
     // End of variables declaration//GEN-END:variables
 }
