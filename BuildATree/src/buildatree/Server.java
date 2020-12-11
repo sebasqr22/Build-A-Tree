@@ -21,7 +21,7 @@ public class Server implements Runnable{
 
     int contador = 210;
 
-    int enviarToken = 20;
+    int enviarToken = 5;
 
     private boolean on = true;
     public Server(){
@@ -71,7 +71,7 @@ public class Server implements Runnable{
 
                 if(enviarToken == 0){
                     partida.setTiempoAcabado(true);
-                    enviarToken = 20;
+                    enviarToken = 5;
                 }
 
                 new Client(9010, partida);
