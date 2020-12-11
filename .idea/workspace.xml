@@ -2,13 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8163276d-0139-4e5b-b6cc-cb5cc7593f2d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_google_code_gson_gson_2_8_6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/Cliente.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/EnvioRAPIDO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/BuildATree/src/buildatree/Partida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/BuildATree/src/buildatree/Servidor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/VisualServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/BuildATree/src/buildatree/VisualServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/VisualServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/VisualServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build-A-Tree.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Build-A-Tree.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/BuildATree/src/buildatree/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/Partida.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/Servidor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/VisualServer.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/VisualServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/Jugador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/Jugador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/Partida$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/Partida$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/Partida.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/Partida.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/Servidor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/VisualServer$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/VisualServer$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/VisualServer$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/VisualServer$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/VisualServer.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,14 +49,35 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.VisualServer">
+  <component name="RunManager" selected="Application.Test">
     <configuration name="EnvioRAPIDO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="buildatree.EnvioRAPIDO" />
+      <module name="Build-A-Tree" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="buildatree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="buildatree.Test" />
       <module name="Build-A-Tree" />
       <extension name="coverage">
         <pattern>
@@ -70,19 +102,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test" />
         <item itemvalue="Application.VisualServer" />
         <item itemvalue="Application.EnvioRAPIDO" />
       </list>
@@ -99,7 +121,9 @@
       <workItem from="1607198263611" duration="14544000" />
       <workItem from="1607446827870" duration="1268000" />
       <workItem from="1607485066753" duration="775000" />
-      <workItem from="1607561069100" duration="4586000" />
+      <workItem from="1607561069100" duration="6724000" />
+      <workItem from="1607646914377" duration="6435000" />
+      <workItem from="1607701808593" duration="1103000" />
     </task>
     <servers />
   </component>
@@ -115,22 +139,34 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1607209941481" />
-    <state width="1493" height="197" key="GridCell.Tab.0.bottom" timestamp="1607564729726">
+    <state width="1493" height="234" key="GridCell.Tab.0.bottom" timestamp="1607702550700">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="197" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607564729726" />
-    <state width="1493" height="197" key="GridCell.Tab.0.center" timestamp="1607564729726">
+    <state width="1323" height="200" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1607656446193" />
+    <state width="1493" height="234" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607702550700" />
+    <state width="1493" height="234" key="GridCell.Tab.0.center" timestamp="1607702550700">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="197" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607564729726" />
-    <state width="1493" height="197" key="GridCell.Tab.0.left" timestamp="1607564729726">
+    <state width="1323" height="200" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1607656446193" />
+    <state width="1493" height="234" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607702550700" />
+    <state width="1493" height="234" key="GridCell.Tab.0.left" timestamp="1607702550700">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="197" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607564729726" />
-    <state width="1493" height="197" key="GridCell.Tab.0.right" timestamp="1607564729726">
+    <state width="1323" height="200" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1607656446193" />
+    <state width="1493" height="234" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607702550700" />
+    <state width="1493" height="234" key="GridCell.Tab.0.right" timestamp="1607702550700">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="197" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607564729726" />
+    <state width="1323" height="200" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1607656446193" />
+    <state width="1493" height="234" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607702550700" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1607652752423">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1607652752423" />
+    <state x="387" y="255" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1607652740276">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="387" y="255" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1366.728@0.0.1366.728" timestamp="1607652740276" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1607565424329">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

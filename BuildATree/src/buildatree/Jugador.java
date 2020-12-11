@@ -1,22 +1,27 @@
 package buildatree;
 
 public class Jugador {
-    int tipoArbol = 0;
-    int largoArbol = 0;
+    int puerto;
+    int puntaje;
 
-    public int getTipoArbol(){
-        return tipoArbol;
+    public Jugador(){
+        puerto = 8000;
+        puntaje = 600;
     }
 
-    public void setTipoArbol(int tipo){
-        this.tipoArbol = tipo;
+    public int getPuerto() {
+        return puerto;
     }
 
-    public int getLargoArbol(){
-        return largoArbol;
+    public void setPuerto(int puerto) {
+        this.puerto = puerto;
     }
 
-    public void setLargoArbol(int largo){
-        largoArbol += largo;
+    public int getPuntaje() {
+        return puntaje;
+    }
+
+    public void setPuntaje(int puntaje) {
+        this.puntaje = puntaje;
     }
 }
