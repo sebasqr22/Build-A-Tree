@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -15,21 +16,26 @@ public class Server implements Runnable{
 
     public static final int puerto = 8000;
     private ServerSocket serverSocket;
-    private int[] clients;
+
+
     public static Gson gson = new Gson();
     public Partida partida;
 
     int contador = 210;
-
     int enviarToken = 5;
+    int cambioarbol = 20;
+
+    private String[] tree_list = { "BST", "AVL", "SPLAY", "BTREE"};
+
+    Random random = new Random();
 
     private boolean on = true;
+
+
     public Server(){
         partida = new Partida();
+        partida.setArbolactual(tree_list[random.nextInt(tree_list.length)]);
         Controltiempo();
-
-        Contador nuevoTiempo = new Contador();
-        nuevoTiempo.ComenzarTimer();
     }
 
 
@@ -59,19 +65,23 @@ public class Server implements Runnable{
             e.printStackTrace();
         }
     }
-    private void Controltiempo(){
+    private void Controltiempo(){//Lleva el control del tiempo de la partida y el spawn de los tokens
         TimerTask timerTask = new TimerTask()
         {
             public void run()
             {
                 contador-=1;
                 enviarToken -=1;
+                cambioarbol-=1;
                 partida.setTiempo(contador);
-                partida.setArbolactual("BST");
 
                 if(enviarToken == 0){
                     partida.setTiempoAcabado(true);
                     enviarToken = 5;
+                }
+                if(cambioarbol == 0){
+                    partida.setArbolactual(tree_list[random.nextInt(tree_list.length)]);
+                    cambioarbol = 20;
                 }
 
                 new Client(9010, partida);

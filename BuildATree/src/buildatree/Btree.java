@@ -9,6 +9,7 @@ package buildatree;
  */
 public class Btree {
     private Bnode root;
+    public int size;
 
     private int grado;//el numero minimo de claves
     private int maxclaves;//cantidad maxima de datos
@@ -116,6 +117,7 @@ public class Btree {
         }else{
             insertvalue(rootaux,clave);
         }
+        size++;
     }
     /**Inserta una clave en un nodo específico**/
     private void insertvalue(Bnode x,int clave){
@@ -159,6 +161,10 @@ public class Btree {
     /**Muestra el contenido del 'arbol**/
     public void Show(){
         show(this.root);
+    }
+
+    public int getSize() {
+        return size;
     }
 
     public void show(Bnode aux){

@@ -18,6 +18,7 @@ class Node {
  */
 public class AVLTree {
     Node root;
+    int size;
 
     // Funcion que retorna la altura del arbol
 
@@ -170,7 +171,7 @@ public class AVLTree {
             node.right = rightRotate(node.right);
             return leftRotate(node);
         }
-
+        size++;
         return node;
     }
 
@@ -282,4 +283,7 @@ public class AVLTree {
         }
     }
 
+    public int getSize() {
+        return size;
+    }
 }

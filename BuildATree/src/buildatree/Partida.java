@@ -4,11 +4,7 @@ public class Partida {
     int tiempo;
     String arbolactual;
     Boolean tiempoAcabado = false;
-
-    public Partida(){
-        tiempo = 210;
-        arbolactual = "BST";
-    }
+    String[] listaajugaadores;
 
     public int getTiempo() {
         return tiempo;
@@ -29,4 +25,12 @@ public class Partida {
     public Boolean getTiempoAcabado(){ return this.tiempoAcabado;}
 
     public void setTiempoAcabado(Boolean condicion){ this.tiempoAcabado = condicion;}
+
+    public String[] getListaajugaadores() {
+        return listaajugaadores;
+    }
+
+    public void setListaajugaadores(String[] listaajugaadores) {
+        this.listaajugaadores = listaajugaadores;
+    }
 }
