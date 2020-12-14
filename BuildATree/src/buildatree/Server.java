@@ -14,27 +14,34 @@ public class Server implements Runnable{
      * los tokens al juego.
      */
 
-    public static final int puerto = 8000;
+    public static final int puerto = 8000;//puerto para el serversocket
     private ServerSocket serverSocket;
 
 
-    public static Gson gson = new Gson();
-    public Partida partida;
+
+    public static Gson gson = new Gson();//conversor para json
+    public Partida partida;//partida del servidor
 
     int contador = 210;
     int enviarToken = 5;
     int cambioarbol = 20;
+    int numjugadores;//total de jugadores en partida
 
-    private String[] tree_list = { "BST", "AVL", "SPLAY", "BTREE"};
+
+    private String[] tree_list = { "BST", "AVL", "SPLAY", "BTREE"};//challenges disponibles
+    int[] puntajes;//puntajes de los jugadores en orden
 
     Random random = new Random();
 
     private boolean on = true;
 
 
-    public Server(){
+    public Server(int jugadores){
         partida = new Partida();
         partida.setArbolactual(tree_list[random.nextInt(tree_list.length)]);
+        partida.setPuntajes(new int[]{0,0,0,0});
+        this.puntajes = new int[]{0,0,0,0};
+        this.numjugadores = jugadores;
         Controltiempo();
     }
 
@@ -53,9 +60,10 @@ public class Server implements Runnable{
                 BufferedReader entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
                 String data = (entrada.readLine());
-                Jugador alan = gson.fromJson(data,Jugador.class);
+                Jugador recibido = gson.fromJson(data,Jugador.class);
 
-                System.out.println(alan.getPuerto());
+                System.out.println(data);
+
 
                 socket.close();
 
@@ -79,8 +87,10 @@ public class Server implements Runnable{
                     partida.setTiempoAcabado(true);
                     enviarToken = 5;
                 }
-                if(cambioarbol == 0){
+                if(cambioarbol == 0){//cuando acaba el contador se resetea el arbol y se dan los puntos
+                    int total = numjugadores;
                     partida.setArbolactual(tree_list[random.nextInt(tree_list.length)]);
+                    partida.setPuntajes(puntajes);
                     cambioarbol = 20;
                 }
 
@@ -92,6 +102,10 @@ public class Server implements Runnable{
         // Aquí se pone en marcha el timer cada segundo.
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(timerTask, 0, 1000);
+    }
+
+    private void treeControl(){
+
     }
 
 }

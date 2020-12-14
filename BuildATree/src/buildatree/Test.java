@@ -8,13 +8,13 @@ public class Test {
         System.out.println(valor);
 
         if(valor.contains("Iniciar2")){
-            Thread hilo = new Thread(new Server());
+            Thread hilo = new Thread(new Server(2));
             hilo.start();
         }else if(valor.contains("Iniciar3")){
-            Thread hilo = new Thread(new Server());
+            Thread hilo = new Thread(new Server(3));
             hilo.start();
         }else if(valor.contains("Iniciar4")){
-            Thread hilo = new Thread(new Server());
+            Thread hilo = new Thread(new Server(4));
             hilo.start();
         }
     }

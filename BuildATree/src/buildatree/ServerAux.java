@@ -46,12 +46,12 @@ public class ServerAux {
 
 
                 socket.close();
-
             }
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         return this.objeto.GetMensaje();
     }
 }

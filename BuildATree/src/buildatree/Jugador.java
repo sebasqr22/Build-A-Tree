@@ -1,27 +1,35 @@
 package buildatree;
 
 public class Jugador {
-    int puerto;
-    int puntaje;
+    /***
+     * Envia recoge la información de los tokens recibidos por el jugador
+     */
 
-    public Jugador(){
-        puerto = 8000;
-        puntaje = 600;
+    int valor;
+    String tipo;
+    String nombre;
+
+    public int getValor() {
+        return valor;
     }
 
-    public int getPuerto() {
-        return puerto;
+    public void setValor(int puntaje) {
+        this.valor = puntaje;
     }
 
-    public void setPuerto(int puerto) {
-        this.puerto = puerto;
+    public String getTipo() {
+        return tipo;
     }
 
-    public int getPuntaje() {
-        return puntaje;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
-    public void setPuntaje(int puntaje) {
-        this.puntaje = puntaje;
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 }
