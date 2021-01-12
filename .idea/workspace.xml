@@ -21,16 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8163276d-0139-4e5b-b6cc-cb5cc7593f2d" name="Default Changelist" comment="Los jugadores envian los datos al servidor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/AVLTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/BuildATree/src/buildatree/AVLTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/Btree.java" beforeDir="false" afterPath="$PROJECT_DIR$/BuildATree/src/buildatree/Btree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/BuildATree/src/buildatree/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/AVLTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/AVLTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/Btree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/Btree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/ServerAux.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/ServerAux.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/Test.class" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/PlayersTrees.java" beforeDir="false" afterPath="$PROJECT_DIR$/BuildATree/src/buildatree/PlayersTrees.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
