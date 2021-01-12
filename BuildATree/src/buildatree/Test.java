@@ -3,7 +3,7 @@ package buildatree;
 public class Test {
 
     public static void main(String[] args) {
-        ServerAux initserver = new ServerAux(9001);
+        ServerAux initserver = new ServerAux(9002);
         String valor = initserver.Iniciar();
         System.out.println(valor);
 

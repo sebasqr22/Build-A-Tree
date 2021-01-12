@@ -286,4 +286,12 @@ public class AVLTree {
     public int getSize() {
         return size;
     }
+
+    /**
+     * Método para limpiar el árbol
+     */
+    public void clear(){
+        this.root = null;
+        this.size = 0;
+    }
 }

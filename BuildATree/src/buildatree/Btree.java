@@ -184,5 +184,6 @@ public class Btree {
      */
     public void clear(){
         this.root = null;
+        this.size = 0;
     }
 }

@@ -21,10 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8163276d-0139-4e5b-b6cc-cb5cc7593f2d" name="Default Changelist" comment="Los jugadores envian los datos al servidor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/Jugador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/Jugador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/Partida.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/Partida.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/Server$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/Server$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/AVLTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/BuildATree/src/buildatree/AVLTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/Btree.java" beforeDir="false" afterPath="$PROJECT_DIR$/BuildATree/src/buildatree/Btree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/BuildATree/src/buildatree/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/AVLTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/AVLTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/Btree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/Btree.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/ServerAux.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/ServerAux.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Build-A-Tree/buildatree/Test.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,6 +111,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Test" />
@@ -174,5 +188,27 @@
     <MESSAGE value="Se agrego un server para iniciar diferente para hacer más simple el inicio del juego" />
     <MESSAGE value="Los jugadores envian los datos al servidor" />
     <option name="LAST_COMMIT_MESSAGE" value="Los jugadores envian los datos al servidor" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1493" height="199" key="GridCell.Tab.0.bottom" timestamp="1610415934426">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1323" height="199" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1610414588036" />
+    <state width="1493" height="199" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610415934426" />
+    <state width="1493" height="199" key="GridCell.Tab.0.center" timestamp="1610415934425">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1323" height="199" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1610414588032" />
+    <state width="1493" height="199" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610415934425" />
+    <state width="1493" height="199" key="GridCell.Tab.0.left" timestamp="1610415934424">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1323" height="199" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1610414588031" />
+    <state width="1493" height="199" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610415934424" />
+    <state width="1493" height="199" key="GridCell.Tab.0.right" timestamp="1610415934426">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1323" height="199" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1610414588035" />
+    <state width="1493" height="199" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610415934426" />
   </component>
 </project>
