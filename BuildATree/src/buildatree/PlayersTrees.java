@@ -19,18 +19,7 @@ public class PlayersTrees {
 
             for (Player a:players) {
                 a.setArbol(this.arbol);//indica el arbol a cada jugador
-            }
-            if (arbol.equals("AVL")){
-
-            }
-            else if (arbol.equals("BST")){
-
-            }
-            else if (arbol.equals("SPLAY")){
-
-            }
-            else{
-
+                a.crearArbol();
             }
         }
 
@@ -40,22 +29,26 @@ public class PlayersTrees {
             }
             for (Player a:players) {
                 a.setArbol(this.arbol);//indica el arbol a cada jugador
-            }
-            if (arbol.equals("AVL")){
-
-            }
-            else if (arbol.equals("BST")){
-
-            }
-            else if (arbol.equals("SPLAY")){
-
-            }
-            else{
-
+                a.crearArbol();
             }
         }
 
         else{
+            for (int i=0;i<5 ;i++) {
+                players.add(new Player());
+            }
+            for (Player a:players) {
+                a.setArbol(this.arbol);//indica el arbol a cada jugador
+                a.crearArbol();
+            }
         }
+    }
+
+    public ArrayList getLista(){
+        return players;
+    }
+
+    public void agregarNodo(int numeroJugador, int numero){
+        players.get(numeroJugador).agregarNodos(numero);
     }
 }
