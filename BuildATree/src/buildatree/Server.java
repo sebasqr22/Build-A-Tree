@@ -27,6 +27,8 @@ public class Server implements Runnable{
     int enviarToken = 5;
     int cambioarbol = 20;
     int numjugadores;//total de jugadores en partida
+    String arbol;
+    PlayersTrees contenedor;
 
 
     private String[] tree_list = { "BST", "AVL", "SPLAY", "BTREE"};//challenges disponibles
@@ -39,7 +41,7 @@ public class Server implements Runnable{
 
     public Server(int jugadores){//inicia el servidor
         partida = new Partida();//crea un nuevo objeto de tipo partida
-        String arbol = tree_list[random.nextInt(tree_list.length)];
+        arbol = tree_list[random.nextInt(tree_list.length)];
 
         partida.setArbolactual(arbol);//elige el arbol para iniciar la partida
 
@@ -52,6 +54,10 @@ public class Server implements Runnable{
         this.puntajes = new int[]{0,0,0,0};
         this.numjugadores = jugadores;//numero de jugadores reportados
         Controltiempo();//inicia el contador
+
+        contenedor = new PlayersTrees();
+        contenedor.setArbol(arbol);
+        contenedor.comenzar(jugadores);
     }
 
 
@@ -72,6 +78,40 @@ public class Server implements Runnable{
                 Jugador recibido = gson.fromJson(data,Jugador.class);
 
                 //empezar el procedimiento de validación
+
+                String nombre = recibido.getNombre();
+                String tipo = recibido.getTipo();
+                int valor = recibido.getValor();
+
+                if(nombre.equals("Player1")){
+                    if (tipo.equals(arbol)){
+                        contenedor.agregarNodo(0, valor);
+                    }
+                    else{
+                        contenedor.reset(0);
+                    }
+                }
+                else if(nombre.equals("Player2")){
+                    if (tipo.equals(arbol)){
+                        contenedor.agregarNodo(1, valor);
+                    }else{
+                        contenedor.reset(1);
+                    }
+                }
+                else if(nombre.equals("Player3")){
+                    if (tipo.equals(arbol)){
+                        contenedor.agregarNodo(2, valor);
+                    }else{
+                        contenedor.reset(2);
+                    }
+                }
+                else{
+                    if (tipo.equals(arbol)){
+                        contenedor.agregarNodo(3, valor);
+                    }else{
+                        contenedor.reset(3);
+                    }
+                }
 
                 System.out.println(data);
 
@@ -101,8 +141,11 @@ public class Server implements Runnable{
                 if(cambioarbol == 0){//cuando acaba el contador se resetea el arbol y se dan los puntos
                     int total = numjugadores;
 
-                    String arbol = tree_list[random.nextInt(tree_list.length)];//arbol elegido
+                    arbol = tree_list[random.nextInt(tree_list.length)];//arbol elegido
                     partida.setArbolactual(arbol);//arbol al que se cambia
+                    contenedor.resetAll();
+                    contenedor.setArbol(arbol);
+                    contenedor.comenzar(numjugadores);
                     partida.setPuntajes(puntajes);
 
                     //se le dan los puntos a cada jugador

@@ -22,6 +22,7 @@
     <list default="true" id="8163276d-0139-4e5b-b6cc-cb5cc7593f2d" name="Default Changelist" comment="Los jugadores envian los datos al servidor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/PlayersTrees.java" beforeDir="false" afterPath="$PROJECT_DIR$/BuildATree/src/buildatree/PlayersTrees.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/BuildATree/src/buildatree/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

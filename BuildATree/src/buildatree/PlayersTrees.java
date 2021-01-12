@@ -51,4 +51,15 @@ public class PlayersTrees {
     public void agregarNodo(int numeroJugador, int numero){
         players.get(numeroJugador).agregarNodos(numero);
     }
+
+    public void reset(int numeroJugador){
+        players.get(numeroJugador).borrarArbol();
+    }
+
+    public void resetAll(){
+        int largo = players.size();
+        for(int i=0; i< largo+1; i++){
+            players.get(i).borrarArbol();
+        }
+    }
 }
