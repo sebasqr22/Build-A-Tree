@@ -49,15 +49,15 @@ public class Server implements Runnable{
 
         //inciar los arboles de lo jugadores segun el tipo elegido
 
-
+        contenedor = new PlayersTrees();
+        contenedor.setArbol(arbol);
+        contenedor.comenzar(jugadores);
 
         this.puntajes = new int[]{0,0,0,0};
         this.numjugadores = jugadores;//numero de jugadores reportados
         Controltiempo();//inicia el contador
 
-        contenedor = new PlayersTrees();
-        contenedor.setArbol(arbol);
-        contenedor.comenzar(jugadores);
+
     }
 
 
@@ -74,7 +74,7 @@ public class Server implements Runnable{
 
                 BufferedReader entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));//lee el mensaje del jugador
 
-                String data = (entrada.readLine());
+                String data = (entrada.readLine());//convierte el mensaje a texto
                 Jugador recibido = gson.fromJson(data,Jugador.class);
 
                 //empezar el procedimiento de validación
@@ -112,6 +112,7 @@ public class Server implements Runnable{
                         contenedor.reset(3);
                     }
                 }
+                //termina proceso de validación
 
                 System.out.println(data);
 
@@ -134,29 +135,40 @@ public class Server implements Runnable{
                 cambioarbol-=1;
                 partida.setTiempo(contador);
 
+                if(contenedor.Status()){//si un jugador completó el challenge
+                    puntajes[contenedor.getGanador()] += 30;
+
+                    //cambia los arboles y resetea el tiempo para el nuevo cambio
+
+                    arbol = tree_list[random.nextInt(tree_list.length)];//arbol elegido
+                    partida.setArbolactual(arbol);//arbol al que se cambia
+                    refreshPlayers();
+                    cambioarbol = 20;
+                }
+
+
+
                 if(enviarToken == 0){//envia la indicacion crear un token
                     partida.setTiempoAcabado(true);
                     enviarToken = 5;
                 }
                 if(cambioarbol == 0){//cuando acaba el contador se resetea el arbol y se dan los puntos
-                    int total = numjugadores;
+
+                    puntajes[contenedor.best()]+=20;//le dá los puntos a el mejor jugador de la ronda
 
                     arbol = tree_list[random.nextInt(tree_list.length)];//arbol elegido
                     partida.setArbolactual(arbol);//arbol al que se cambia
 
-                    contenedor.resetAll();//resetea los arboles de los jugadores
-                    contenedor.setArbol(arbol);//cambia los arboles de los jugadores
-                    contenedor.comenzar(numjugadores);//inicia de nuevo los arboles de los jugadores
 
                     partida.setPuntajes(puntajes);
+
+                    refreshPlayers();//actualiza los arboles de los jugadores
 
                     //se le dan los puntos a cada jugador
                     //resetean
                     //se le vuelven a dar los segun
 
                     cambioarbol = 20;
-
-
                 }
 
                 new Client(9010, partida);
@@ -169,8 +181,10 @@ public class Server implements Runnable{
         timer.scheduleAtFixedRate(timerTask, 0, 1000);
     }
 
-    private void treeControl(){
-
+    public void refreshPlayers(){
+        contenedor.resetAll();//resetea los arboles de los jugadores
+        contenedor.setArbol(arbol);//cambia los arboles de los jugadores
+        contenedor.comenzar(numjugadores);//inicia de nuevo los arboles de los jugadores
     }
 
 }

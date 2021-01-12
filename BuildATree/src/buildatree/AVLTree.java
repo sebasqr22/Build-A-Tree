@@ -125,6 +125,13 @@ public class AVLTree {
 
     // Funcion para insertar un nodo al arbol
 
+    public void Insert(int num){
+        Node rootaux = this.root;
+        insert(rootaux,num);
+        size++;
+
+    }
+
     /**
      *
      * @param node
