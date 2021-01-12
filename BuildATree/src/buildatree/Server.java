@@ -143,9 +143,11 @@ public class Server implements Runnable{
 
                     arbol = tree_list[random.nextInt(tree_list.length)];//arbol elegido
                     partida.setArbolactual(arbol);//arbol al que se cambia
-                    contenedor.resetAll();
-                    contenedor.setArbol(arbol);
-                    contenedor.comenzar(numjugadores);
+
+                    contenedor.resetAll();//resetea los arboles de los jugadores
+                    contenedor.setArbol(arbol);//cambia los arboles de los jugadores
+                    contenedor.comenzar(numjugadores);//inicia de nuevo los arboles de los jugadores
+
                     partida.setPuntajes(puntajes);
 
                     //se le dan los puntos a cada jugador

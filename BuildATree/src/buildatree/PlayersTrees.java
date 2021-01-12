@@ -57,9 +57,8 @@ public class PlayersTrees {
     }
 
     public void resetAll(){
-        int largo = players.size();
-        for(int i=0; i< largo+1; i++){
-            players.get(i).borrarArbol();
+        for (Player a:players) {
+            a.borrarArbol();
         }
     }
 }
