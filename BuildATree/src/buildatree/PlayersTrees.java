@@ -1,26 +1,25 @@
 package buildatree;
 
+import java.util.ArrayList;
+
 public class PlayersTrees {
 
     String arbol;
 
-    Player player1 = new Player();
-
-    Player player2 = new Player();
-
-    Player player3 = new Player();
-
-    Player player4 = new Player();
-
+    ArrayList<Player> players = new ArrayList<>();//guarda las instancias de la clase jugador
     public void setArbol(String data){
         arbol = data;
     }
 
     public void comenzar(int numeroJugadores){
         if (numeroJugadores == 2){
-            player1.setArbol(arbol);
-            player2.setArbol(arbol);
+            for (int i=0;i<3 ;i++) {
+                players.add(new Player());
+            }
 
+            for (Player a:players) {
+                a.setArbol(this.arbol);//indica el arbol a cada jugador
+            }
             if (arbol.equals("AVL")){
 
             }
@@ -36,16 +35,27 @@ public class PlayersTrees {
         }
 
         else if (numeroJugadores == 3){
-            player1.setArbol(arbol);
-            player2.setArbol(arbol);
-            player3.setArbol(arbol);
+            for (int i=0;i<4 ;i++) {
+                players.add(new Player());
+            }
+            for (Player a:players) {
+                a.setArbol(this.arbol);//indica el arbol a cada jugador
+            }
+            if (arbol.equals("AVL")){
+
+            }
+            else if (arbol.equals("BST")){
+
+            }
+            else if (arbol.equals("SPLAY")){
+
+            }
+            else{
+
+            }
         }
 
         else{
-            player1.setArbol(arbol);
-            player2.setArbol(arbol);
-            player3.setArbol(arbol);
-            player4.setArbol(arbol);
         }
     }
 }
