@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -36,13 +37,21 @@ public class Server implements Runnable{
     private boolean on = true;
 
 
-    public Server(int jugadores){
-        partida = new Partida();
-        partida.setArbolactual(tree_list[random.nextInt(tree_list.length)]);
-        partida.setPuntajes(new int[]{0,0,0,0});
+    public Server(int jugadores){//inicia el servidor
+        partida = new Partida();//crea un nuevo objeto de tipo partida
+        String arbol = tree_list[random.nextInt(tree_list.length)];
+
+        partida.setArbolactual(arbol);//elige el arbol para iniciar la partida
+
+        partida.setPuntajes(new int[]{0,0,0,0});// puntajes iniciales de los jugadores
+
+        //inciar los arboles de lo jugadores segun el tipo elegido
+
+
+
         this.puntajes = new int[]{0,0,0,0};
-        this.numjugadores = jugadores;
-        Controltiempo();
+        this.numjugadores = jugadores;//numero de jugadores reportados
+        Controltiempo();//inicia el contador
     }
 
 
@@ -57,10 +66,12 @@ public class Server implements Runnable{
             while (on){
                 socket = serverSocket.accept();//crea una conexión
 
-                BufferedReader entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                BufferedReader entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));//lee el mensaje del jugador
 
                 String data = (entrada.readLine());
                 Jugador recibido = gson.fromJson(data,Jugador.class);
+
+                //empezar el procedimiento de validación
 
                 System.out.println(data);
 
@@ -83,15 +94,24 @@ public class Server implements Runnable{
                 cambioarbol-=1;
                 partida.setTiempo(contador);
 
-                if(enviarToken == 0){
+                if(enviarToken == 0){//envia la indicacion crear un token
                     partida.setTiempoAcabado(true);
                     enviarToken = 5;
                 }
                 if(cambioarbol == 0){//cuando acaba el contador se resetea el arbol y se dan los puntos
                     int total = numjugadores;
-                    partida.setArbolactual(tree_list[random.nextInt(tree_list.length)]);
+
+                    String arbol = tree_list[random.nextInt(tree_list.length)];//arbol elegido
+                    partida.setArbolactual(arbol);//arbol al que se cambia
                     partida.setPuntajes(puntajes);
+
+                    //se le dan los puntos a cada jugador
+                    //resetean
+                    //se le vuelven a dar los segun
+
                     cambioarbol = 20;
+
+
                 }
 
                 new Client(9010, partida);
