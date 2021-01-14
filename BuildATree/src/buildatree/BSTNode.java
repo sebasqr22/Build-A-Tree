@@ -1,3 +1,5 @@
+package buildatree;
+
 public class BSTNode {
     private BSTNode left;
     private BSTNode right;

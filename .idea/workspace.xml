@@ -19,10 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8163276d-0139-4e5b-b6cc-cb5cc7593f2d" name="Default Changelist" comment="Se comentaron varias lineas">
+    <list default="true" id="8163276d-0139-4e5b-b6cc-cb5cc7593f2d" name="Default Changelist" comment="Se corrigió el error de los puntos a un solo ganador">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/PlayersTrees.java" beforeDir="false" afterPath="$PROJECT_DIR$/BuildATree/src/buildatree/PlayersTrees.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/BuildATree/src/buildatree/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610591740427</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Se corrigió el error de los puntos a un solo ganador">
+      <created>1610592805353</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1610592805353</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,6 +217,7 @@
     <MESSAGE value="Se agrego una forma de almacenamiento a la clase PlayersTrees" />
     <MESSAGE value="Se agregaron pequeños cambios en la parte de el contador" />
     <MESSAGE value="Se comentaron varias lineas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se comentaron varias lineas" />
+    <MESSAGE value="Se corrigió el error de los puntos a un solo ganador" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se corrigió el error de los puntos a un solo ganador" />
   </component>
 </project>

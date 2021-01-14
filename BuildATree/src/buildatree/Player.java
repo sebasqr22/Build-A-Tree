@@ -15,6 +15,7 @@ public class Player {
     Btree arbolB;
 
     SplayTree arbolSplay;
+    BSTTree arbolbst;
 
 
     /**
@@ -34,6 +35,7 @@ public class Player {
         }
         else if (arbol.equals("BST")){
 
+            arbolbst = new BSTTree();
         }
         else if (arbol.equals("SPLAY")){
             arbolSplay = new SplayTree();
@@ -51,7 +53,7 @@ public class Player {
             avl.clear();
         }
         else if (arbol.equals("BST")){
-
+            arbolbst.Clear();
         }
         else if (arbol.equals("SPLAY")){
             arbolSplay.clear();
@@ -70,7 +72,7 @@ public class Player {
             avl.Insert(num);
         }
         else if (arbol.equals("BST")){
-
+            arbolbst.insert(num);
         }
         else if (arbol.equals("SPLAY")){
             arbolSplay.Insert(num);
@@ -89,7 +91,7 @@ public class Player {
             size = avl.getSize();
         }
         else if (arbol.equals("BST")){
-            //return bst.size();
+            return arbolbst.getSize();
 
         }
         else if (arbol.equals("SPLAY")){

@@ -1,8 +1,13 @@
+package buildatree;
+
+import buildatree.BSTNode;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class BSTTree {
     private BSTNode root;
+    private int size;
 
     //Funcion que verifica si el arbol es vacio o no
     public boolean isEmpty() {
@@ -19,6 +24,7 @@ public class BSTTree {
             return;
         }
         insertNode(this.root, data);
+        size++;
     }
     //Funcion que agarra el valor insertado y lo convierte en nodo
     private BSTNode insertNode(BSTNode root, Integer data) {
@@ -85,5 +91,13 @@ public class BSTTree {
         doInOrder(root.getLeft());
         System.out.print(root.getData()+" ");
         doInOrder(root.getRight());
+    }
+    public void Clear(){
+        this.root = null;
+        size=0;
+    }
+
+    public int getSize() {
+        return size;
     }
 }
