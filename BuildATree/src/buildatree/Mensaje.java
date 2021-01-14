@@ -1,6 +1,9 @@
 package buildatree;
 
 public class Mensaje {
+    /***
+     * Clase que registra un string, utilizada para enviar texto a un cliente y recibirlo.
+     */
     String mensaje;
 
     public Mensaje()

@@ -5,6 +5,10 @@ import com.google.gson.Gson;
 import java.io.*;
 import java.net.Socket;
 public class Client<T>{
+    /**
+     * Crea un cliente generico que recibe una clase cual sea y la convierte a una clase Json y la envía a un
+     * puerto indicado.
+     */
     private int puerto;
     public static Gson gson = new Gson();
 

@@ -3,6 +3,10 @@ package buildatree;
 import java.util.ArrayList;
 
 public class PlayersTrees {
+    /**
+     * Clase que almacena a los jugadores y cambia la información que almacenan en los arboles,
+     * puede modificar los arboles de los jugadores que almacene en la lista "players"
+     */
 
     String arbol;
     int ganador;//jugador ganador de la ronda
@@ -12,6 +16,11 @@ public class PlayersTrees {
         arbol = data;
     }
 
+    /**
+     * Crea los arboles para los jugadores según el árbol actual de la partida
+     *
+     * @param numeroJugadores la cantida de jugadores en la partida
+     */
     public void comenzar(int numeroJugadores){
         if (numeroJugadores == 2){
             for (int i=0;i<3 ;i++) {
@@ -59,11 +68,17 @@ public class PlayersTrees {
         players.get(numeroJugador).borrarArbol();
     }
 
-    public void resetAll(){
-        for (Player a:players) {
+    public void resetAll() {
+        for (Player a : players) {
             a.borrarArbol();
         }
     }
+
+    /***
+     * Verifica si algún jugador completó el challenge.
+     *
+     * @return true o false si encontró o no a un ganador
+     */
 
     public boolean Status(){//revisa si algún jugador completó el challenge
         boolean validador = false;
@@ -79,6 +94,11 @@ public class PlayersTrees {
             return false;
         }
     }
+
+    /***
+     * Busca el jugador con el árbol más grande.
+     * @return el indice donde se ubica el jugador ganador
+     */
 
     public int best(){//retorna la posición del mejor jugador de la ronda
         int pts = 0;
