@@ -112,6 +112,20 @@ public class PlayersTrees {
         return dir;
     }
 
+    public boolean ExisteGanador(){
+        boolean win = false;
+        int primero = players.get(0).size;
+        for (Player a:players) {
+            if(a.size!=primero){
+                win = true;
+            }
+        }
+        if(win){
+            return true;
+        }
+        return false;
+    }
+
     public int getGanador() {
         return ganador;
     }

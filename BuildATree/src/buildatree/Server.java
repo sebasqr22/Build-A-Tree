@@ -164,8 +164,10 @@ public class Server implements Runnable{
                     enviarToken = 2;
                 }
                 if(cambioarbol == 0){//cuando acaba el contador se resetea el arbol y se dan los puntos
+                    if(contenedor.ExisteGanador()){
+                        puntajes[contenedor.best()]+=20;//le dá los puntos a el mejor jugador de la ronda
+                    }
 
-                    puntajes[contenedor.best()]+=20;//le dá los puntos a el mejor jugador de la ronda
 
                     arbol = tree_list[random.nextInt(tree_list.length)];//arbol elegido
                     partida.setArbolactual(arbol);//arbol al que se cambia
