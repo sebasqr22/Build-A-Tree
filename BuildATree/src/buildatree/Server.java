@@ -38,7 +38,10 @@ public class Server implements Runnable{
 
     private boolean on = true;
 
-
+    /**
+     * Método que crea la conexión del servidor
+     * @param jugadores
+     */
     public Server(int jugadores){//inicia el servidor
         partida = new Partida();//crea un nuevo objeto de tipo partida
         arbol = tree_list[random.nextInt(tree_list.length)];
@@ -60,7 +63,9 @@ public class Server implements Runnable{
 
     }
 
-
+    /**
+     * Metodo que inicia la aceptación del servidor
+     */
     @Override
     public void run() {
         try {
@@ -125,6 +130,10 @@ public class Server implements Runnable{
             e.printStackTrace();
         }
     }
+
+    /**
+     * Método que lleva el control del tiempo
+     */
     private void Controltiempo(){//Lleva el control del tiempo de la partida y el spawn de los tokens
         // Aquí se pone en marcha el timer cada segundo.
         Timer timer = new Timer();
@@ -194,6 +203,9 @@ public class Server implements Runnable{
         timer.scheduleAtFixedRate(timerTask, 0, 1000);
     }
 
+    /**
+     * Método que reinicia los árboles y la cantidad de jugadores en el partida
+     */
     public void refreshPlayers(){
         contenedor.resetAll();//resetea los arboles de los jugadores
         contenedor.setArbol(arbol);//cambia los arboles de los jugadores

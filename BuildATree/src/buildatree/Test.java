@@ -9,6 +9,9 @@ public class Test {
         server.ReiniciarCiclo();
     }
 
+    /**
+     * Método que vuelve a crear el ciclo de inicio de una partida
+     */
     public void ReiniciarCiclo(){
         String valor = initserver.Iniciar();
         System.out.println(valor);

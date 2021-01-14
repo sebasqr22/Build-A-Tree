@@ -53,6 +53,11 @@ public class ServerAux {
 
         return this.objeto.GetMensaje();
     }
+
+    /**
+     * Método que cierra la conexción del servidor
+     * @throws IOException
+     */
     public void Cerrar() throws IOException {
         serverSocket.close();
     }

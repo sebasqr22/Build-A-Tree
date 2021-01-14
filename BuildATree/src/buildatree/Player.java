@@ -17,12 +17,17 @@ public class Player {
     SplayTree arbolSplay;
 
 
-
-
+    /**
+     * Método que cambia el tipo de cambio
+     * @param data
+     */
     public void setArbol(String data){
         arbol = data;
     }
 
+    /**
+     * Método que crea el árbol de un jugador
+     */
     public void crearArbol(){//crea los arboles del jugador
         if (arbol.equals("AVL")){
             avl = new AVLTree();
@@ -38,6 +43,9 @@ public class Player {
         }
     }
 
+    /**
+     * Método para borrar un árbol de un jugador
+     */
     public void borrarArbol(){//borra el nodo del arbol actual
         if (arbol.equals("AVL")){
             avl.clear();
@@ -53,6 +61,10 @@ public class Player {
         }
     }
 
+    /**
+     * Método para agregar nodos al árbol de un jugador
+     * @param num
+     */
     public void agregarNodos(int num){//agrega nodos al arbol actual
         if (arbol.equals("AVL")){
             avl.Insert(num);
@@ -68,6 +80,10 @@ public class Player {
         }
     }
 
+    /**
+     * Método que vetifica el tamaño de cada árbol
+     * @return
+     */
     public int verificaarbol(){//revisa el tamaño de cada árbol
         if (arbol.equals("AVL")){
             size = avl.getSize();
@@ -85,10 +101,18 @@ public class Player {
         return size;
     }
 
+    /**
+     * Método que cambia el indicador de la posición
+     * @param pos
+     */
     public void Setindicador(int pos){
         indicador = pos;
     }
 
+    /**
+     * Método que retorna el indicador de un árbol
+     * @return indicador del árbol
+     */
     public int getIndicador() {
         return indicador;
     }
