@@ -1,9 +1,15 @@
 package buildatree;
 
-public class Test {
+import java.io.IOException;
 
+public class Test {
+    public ServerAux initserver = new ServerAux(9002);
     public static void main(String[] args) {
-        ServerAux initserver = new ServerAux(9001);
+        Test server = new Test();
+        server.ReiniciarCiclo();
+    }
+
+    public void ReiniciarCiclo(){
         String valor = initserver.Iniciar();
         System.out.println(valor);
 
@@ -16,6 +22,12 @@ public class Test {
         }else if(valor.contains("Iniciar4")){
             Thread hilo = new Thread(new Server(4));
             hilo.start();
+        }
+        try {
+            initserver.Cerrar();
+            System.out.println("Se cerro la vara");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

@@ -25,11 +25,10 @@ public class ServerAux {
     }
     public String Iniciar(){
         try {
-            System.out.println("Server Iniciado");
             serverSocket = new ServerSocket(puerto);
             Socket socket;
 
-
+            System.out.println("Server Iniciado");
             while (on){
                 socket = serverSocket.accept();//crea una conexión
 
@@ -53,5 +52,8 @@ public class ServerAux {
         }
 
         return this.objeto.GetMensaje();
+    }
+    public void Cerrar() throws IOException {
+        serverSocket.close();
     }
 }

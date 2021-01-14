@@ -24,7 +24,7 @@ public class Server implements Runnable{
     public Partida partida;//partida del servidor
 
     int contador = 210;
-    int enviarToken = 5;
+    int enviarToken = 2;
     int cambioarbol = 20;
     int numjugadores;//total de jugadores en partida
     String arbol;
@@ -126,6 +126,8 @@ public class Server implements Runnable{
         }
     }
     private void Controltiempo(){//Lleva el control del tiempo de la partida y el spawn de los tokens
+        // Aquí se pone en marcha el timer cada segundo.
+        Timer timer = new Timer();
         TimerTask timerTask = new TimerTask()
         {
             public void run()
@@ -150,7 +152,7 @@ public class Server implements Runnable{
 
                 if(enviarToken == 0){//envia la indicacion crear un token
                     partida.setTiempoAcabado(true);
-                    enviarToken = 5;
+                    enviarToken = 2;
                 }
                 if(cambioarbol == 0){//cuando acaba el contador se resetea el arbol y se dan los puntos
 
@@ -171,13 +173,24 @@ public class Server implements Runnable{
                     cambioarbol = 20;
                 }
 
+                if (contador < -1){
+                    try {
+                        serverSocket.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    Test nuevoServer = new Test();
+                    nuevoServer.ReiniciarCiclo();
+                    timer.cancel();
+
+                }
+
                 new Client(9010, partida);
 
                 partida.setTiempoAcabado(false);
             }
         };
-        // Aquí se pone en marcha el timer cada segundo.
-        Timer timer = new Timer();
         timer.scheduleAtFixedRate(timerTask, 0, 1000);
     }
 
