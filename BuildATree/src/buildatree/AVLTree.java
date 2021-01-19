@@ -5,12 +5,12 @@ import java.util.ArrayList;
 /**
  * Clase para ver los nodos derecho e izquierdo
  */
-class Node {
-    int key, height;
-    Node left, right;
+class AVLNode {
+    public int key, height;
+    public AVLNode left, right;
     
 
-    Node(int d) {
+    public AVLNode(int d) {
         key = d;
         height = 1;
     }
@@ -20,7 +20,7 @@ class Node {
  * Clase para crear el árbol AVL
  */
 public class AVLTree {
-    Node root;
+    AVLNode root;
     int size;
     ArrayList<String> datos = new ArrayList<>();
 
@@ -31,7 +31,7 @@ public class AVLTree {
      * @param N
      * @return altura del árbol
      */
-    int height(Node N) {
+    int height(AVLNode N) {
         if (N == null)
             return 0;
 
@@ -57,9 +57,9 @@ public class AVLTree {
      * @param y
      * @return rotación a la derecha del subárbol
      */
-    Node rightRotate(Node y) {
-        Node x = y.left;
-        Node T2 = x.right;
+    private AVLNode rightRotate(AVLNode y) {
+        AVLNode x = y.left;
+        AVLNode T2 = x.right;
 
         // Hacer la rotacion
         x.right = y;
@@ -72,6 +72,13 @@ public class AVLTree {
         // Retornar la nueva raiz
         return x;
     }
+    private AVLNode doublerightrotate(AVLNode node){
+        AVLNode aux;
+
+        node.right = leftRotate(node.right);
+        aux = rightRotate(node);
+        return aux;
+    }
 
     // Funcion que rota a la izquierda el subarbol
 
@@ -80,9 +87,9 @@ public class AVLTree {
      * @param x
      * @return rotación a la derecha del subárbol
      */
-    Node leftRotate(Node x) {
-        Node y = x.right;
-        Node T2 = y.left;
+    private AVLNode leftRotate(AVLNode x) {
+        AVLNode y = x.right;
+        AVLNode T2 = y.left;
 
         // Hacer la rotacion
         y.left = x;
@@ -95,6 +102,13 @@ public class AVLTree {
         // Retornar la nueva raiz
         return y;
     }
+    private AVLNode doubleleftrotate(AVLNode node){
+        AVLNode aux ;
+
+        node.left = rightRotate(node.left);
+        aux = leftRotate(node);
+        return aux;
+    }
 
     // Retorna el factor de balance apartir del nodo N
 
@@ -103,7 +117,7 @@ public class AVLTree {
      * @param N
      * @return factor de balance a partir del nodo N
      */
-    int getBalance(Node N) {
+    int getBalance(AVLNode N) {
         if (N == null)
             return 0;
 
@@ -117,9 +131,9 @@ public class AVLTree {
      * @param node
      * @return nodo de menor valor en el árbol
      */
-    Node minValueNode(Node node)
+    AVLNode minValueNode(AVLNode node)
     {
-        Node current = node;
+        AVLNode current = node;
 
         while (current.left != null)
             current = current.left;
@@ -130,60 +144,69 @@ public class AVLTree {
     // Funcion para insertar un nodo al arbol
 
     public void Insert(int num){
-        Node rootaux = this.root;
-        insert(rootaux,num);
-        size++;
+        AVLNode nuevo = new AVLNode(num);
+
+        if (this.root == null) {
+            this.root = nuevo;
+        } else {
+            this.root = insert(nuevo, this.root);
+        }
 
     }
 
     /**
      *
-     * @param node
-     * @param key
+     * @param nuevo
+     * @param subtree
      * @return introducir nodo al árbol
      */
-    Node insert(Node node, int key) {
-
+    AVLNode insert(AVLNode nuevo,AVLNode subtree) {
+        AVLNode rootaux = subtree;
         // Primero se realiza la insercion igual a BST
-        if (node == null)
-            return (new Node(key));
+        if (nuevo.key <  subtree.key) {
+            if (subtree.left == null) {
+                subtree.left = nuevo;
+            } else {
+                subtree.left = insert(nuevo, subtree.left);
 
-        if (key < node.key)
-            node.left = insert(node.left, key);
-        else if (key > node.key)
-            node.right = insert(node.right, key);
-        else // Duplicate keys not allowed
-            return node;
+                int balance = getBalance(subtree.left) - getBalance(subtree.right);
 
-        // Actualizar la altura del nodo anterior
-        node.height = 1 + max(height(node.left),
-                height(node.right));
-
-        // Verificar el factor de balance del nodo para ver si se desbalanceo
-        int balance = getBalance(node);
-
-        // Si el nodo se desbalancea se tienen 4 casos
-        // Izquierda izquierda
-        if (balance > 1 && key < node.left.key)
-            return rightRotate(node);
-
-        // Derecha derecha
-        if (balance < -1 && key > node.right.key)
-            return leftRotate(node);
-
-        // Izquierda derecha
-        if (balance > 1 && key > node.left.key) {
-            node.left = leftRotate(node.left);
-            return rightRotate(node);
+                if (balance == 2) {
+                    if (nuevo.key < subtree.left.key) {
+                        rootaux = this.leftRotate(subtree);
+                    } else {
+                        rootaux = doubleleftrotate(subtree);
+                    }
+                }
+            }
+        }else if (nuevo.key>subtree.key) {
+            if (subtree.right == null) {
+                subtree.right = nuevo;
+            } else {
+                subtree.right = insert(nuevo, subtree.right);
+                int balance = getBalance(subtree.right) - getBalance(subtree.left);
+                if (balance == 2) {
+                    if (nuevo.key > subtree.right.key) {
+                        rootaux = rightRotate(subtree);
+                    } else {
+                        rootaux = doublerightrotate(subtree);
+                    }
+                }
+            }
+        }else {
+            System.out.println("Nodo duplicado");
         }
 
-        // Derecha izquierda
-        if (balance < -1 && key < node.right.key) {
-            node.right = rightRotate(node.right);
-            return leftRotate(node);
+
+        if ((subtree.left==null)&&(subtree.right!=null)) {
+            subtree.height = subtree.right.height +1;
+        }else if ((subtree.right==null)&&(subtree.left!=null)) {
+            subtree.height = subtree.left.height+1;
+        }else {
+            subtree.height = max(getBalance(subtree.left),getBalance(subtree.right));
         }
         size++;
-        return node;
+        return rootaux;
     }
 
     // Funcion para eliminar un nodo
@@ -194,7 +217,7 @@ public class AVLTree {
      * @param key
      * @return arból con un nodo eliminado
      */
-    Node deleteNode(Node root, int key)
+    AVLNode deleteNode(AVLNode root, int key)
     {
         // Hacer la eliminacion igual al BST
         if (root == null)
@@ -214,7 +237,7 @@ public class AVLTree {
             // Caso donde el nodo solo tiene un hijo o ninguno
             if ((root.left == null) || (root.right == null))
             {
-                Node temp = null;
+                AVLNode temp = null;
                 if (temp == root.left)
                     temp = root.right;
                 else
@@ -234,7 +257,7 @@ public class AVLTree {
             else
             {
                 // Caso cuando el nodo tiene dos hijo, el sucesor seria el menor del subarbol derecho
-                Node temp = minValueNode(root.right);
+                AVLNode temp = minValueNode(root.right);
 
                 // Copiar la informacion del sucesor en este nodo
                 root.key = temp.key;
@@ -286,10 +309,11 @@ public class AVLTree {
      * Se imprime el orden transversal del árbol
      * @param node
      */
-    public void inOrder(Node node) {
+    public void inOrder(AVLNode node) {
         if (node != null) {
+
             inOrder(node.left);
-            System.out.print(node.key + " ");
+            //System.out.print(node.key+",");
             datos.add(Integer.toString(node.key));
             inOrder(node.right);
         }
@@ -311,9 +335,10 @@ public class AVLTree {
     public void clear(){
         this.root = null;
         this.size = 0;
+        this.datos = new ArrayList<>();
     }
 
-    public Node getRoot() {
+    public AVLNode getRoot() {
         return root;
     }
 }

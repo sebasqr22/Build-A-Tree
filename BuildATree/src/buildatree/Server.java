@@ -147,7 +147,7 @@ public class Server implements Runnable{
                 enviarToken -=1;
                 cambioarbol-=1;
                 partida.setTiempo(contador);
-                DatosArboles();
+
 
 
                 if(contenedor.Status()){//si un jugador completó el challenge
@@ -222,7 +222,6 @@ public class Server implements Runnable{
      * Método que verifica y da los datos de los arboles
      */
     public void DatosArboles(){
-        System.out.println("Obteniendo datos de los arboles");
         if(this.numjugadores == 2){
             partida.setArbol1(contenedor.getArbolJ1());
             partida.setArbol2(contenedor.getArbolJ2());

@@ -111,7 +111,6 @@ public class Player {
      * @return un string con los datos del arbol
      */
     public String[] getDatosarbol(){
-        System.out.println("Viendo datos");
         if (arbol.equals("AVL")){
             datos = avl.getDatos();
         }
