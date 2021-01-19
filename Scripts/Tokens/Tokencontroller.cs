@@ -39,4 +39,8 @@ public class Tokencontroller : MonoBehaviour
     {
         return this.tipo;
     }
+    public int GetData()
+    {
+        return this.data;
+    }
 }

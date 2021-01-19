@@ -2,10 +2,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using TMPro;
-using Client;
 using System.Text;
 using System;
+using TMPro;
 using System.Net.Sockets;
 
 public class CharacterController2D : MonoBehaviour
@@ -25,12 +24,16 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] private GameObject m_shield;								//A object to create a shield for the player
 	[SerializeField] private Collider2D m_CrouchDisableCollider;				// A collider that will be disabled when crouching
 	[SerializeField] private Transform m_respawn;
-	[SerializeField] private Text m_tokeni;										//A indicator to the score of the player
-	[SerializeField] private int score = 0;										//Actual score of the player
+	[SerializeField] public Text m_tokeni;										//indicator score of the player
+	[SerializeField] private int score = 0;                                     //Actual score of the player
+	[SerializeField] private string[] arbol = {};
 	[SerializeField] private GameController gameController;                     //general gameobjects
 	[SerializeField] private Collider2D m_shieldcollider;						//collider of the shield
 	[SerializeField] private GameObject pushRadius;
 	[SerializeField] private TMP_Text m_poderindicator;
+	[SerializeField] public string nombre;
+	[SerializeField] public TMP_Text m_arbolindicator;
+
 
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
@@ -40,8 +43,10 @@ public class CharacterController2D : MonoBehaviour
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
-	private string power;
+	private string power;//nombre del poder actual del jugador
 
+	private Jugador mensaje = new Jugador(0, "", "");
+	
 
 	[Header("Events")]
 	[Space]
@@ -68,8 +73,15 @@ public class CharacterController2D : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+		string texto = "";
 		bool wasGrounded = m_Grounded;
 		m_Grounded = false;
+		m_tokeni.text = score.ToString();
+		for(int i = 0; i < arbol.Length; i++)
+        {
+			texto = texto + "," + arbol[i];
+        }
+		m_arbolindicator.text = texto;
 
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
@@ -180,10 +192,15 @@ public class CharacterController2D : MonoBehaviour
         }
 		if(collider.tag == "Token")
         {
+			mensaje.setTipo(collider.GetComponent<Tokencontroller>().GetTipo());//obtiene el tipo de token
+			mensaje.setValor(collider.GetComponent<Tokencontroller>().GetData());//obtiene el valor del token
+			mensaje.setNombre(nombre);
+			
+
+			new Cliente<Jugador>(8000,mensaje);//envia los datos de los token recolectados
+
 			Destroy(collider.gameObject);
-			score += 1;
-			m_tokeni.text = score.ToString();
-        }
+		}
 		if(collider.tag == "power_up")
         {
 			powercontroller powercontrol = collider.gameObject.GetComponent<powercontroller>();
@@ -247,6 +264,16 @@ public class CharacterController2D : MonoBehaviour
 	public void Resetpower()
     {
 		this.power = "";
+    }
+
+	public void SetScore(int score)
+    {
+		this.score = score;
+    }
+	public void SetArbol(string[] arbol)
+
+    {
+		this.arbol = arbol;
     }
 }
 

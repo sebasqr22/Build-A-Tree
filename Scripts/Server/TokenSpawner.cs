@@ -1,7 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class TokenSpawner : MonoBehaviour
 {
@@ -20,25 +22,45 @@ public class TokenSpawner : MonoBehaviour
     public GameObject t_splay;
     public GameObject t_btree;
 
+    [SerializeField] private CharacterController2D p1;
+    [SerializeField] private CharacterController2D p2;
+    [SerializeField] private CharacterController2D p3;
+    [SerializeField] private CharacterController2D p4;
+
+    public Text indicator;
+    public Partida partida;
+    private Servert<Partida> servidor;
+
+    public int tiempo = 210;
+    public int contadorToken = 0;
+
+    private int actualizacion = 1;
+
 
     public GameObject p_up;//prefab of a power up object
 
     private string[] tree_list = { "BST", "AVL", "SPLAY", "BTREE","POWERUP"};
     public Transform spawner;
 
-    float respawntime = 3.0f;// experimental attribute
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(wave());//initialize the wave
+        //StartCoroutine(wave());//initialize the wave
+        servidor = new Servert<Partida>(9010);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Time.time >= actualizacion)
+        {
+            actualizacion = Mathf.FloorToInt(Time.time) + 1;
+            // Call your fonction
+            StartCoroutine(TiempoToken());
+        }
     }
 
     private void spawnToken(string token)//method to spawn tokens on screen
@@ -69,17 +91,49 @@ public class TokenSpawner : MonoBehaviour
 
     }
 
-    IEnumerator wave()//experimental function
+    void gamefinish()//send the score to the permanet score object
     {
-        while (true)
-        {
-            yield return new WaitForSeconds(respawntime);
-            spawnToken(tree_list[Random.Range(0,tree_list.Length)]);
-        }
-        
+        int[] scores = { p1.GetScores(), p2.GetScores(), p3.GetScores(), p4.GetScores() };
+        permanentscore.permanent.Setscores(scores);
+        SceneManager.LoadScene(2);
     }
 
+    IEnumerator TiempoToken()//controla el tiempo para revisar los objetos que envia el server
+    {
+        yield return new WaitForSeconds(1);
+        partida = servidor.GetObjeto();
+        indicator.text = partida.getTiempo().ToString();
+        i_reto.text = partida.GetArbolactual();
 
-    
+        //da los puntos segun el server a cada jugador
+        p1.SetScore(partida.getPuntajes()[0]);
+        p2.SetScore(partida.getPuntajes()[1]);
+        p3.SetScore(partida.getPuntajes()[2]);
+        p4.SetScore(partida.getPuntajes()[3]);
 
+        p1.SetArbol(partida.getArbol1());
+        p2.SetArbol(partida.getArbol2());
+        p3.SetArbol(partida.getArbol3());
+        p4.SetArbol(partida.getArbol4());
+
+        if (partida.getTiempo() < 0)
+        {
+            gamefinish();
+        }
+
+        if (partida.getTiempoAcabado() == true)
+        {
+            TirarToken();
+            
+        }
+    }
+    public void TirarToken()
+    {
+        partida.setTiempoAcabado(false);
+        //Random random = new Random();
+        int numero = UnityEngine.Random.Range(0, 4);
+        //Debug.Log("Numero de lista: " + numero);
+        //Debug.Log(tree_list[numero]);  
+        spawnToken(tree_list[numero]);
+    }
 }

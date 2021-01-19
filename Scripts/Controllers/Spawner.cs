@@ -22,11 +22,11 @@ public class Spawner : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        if (this.transform.position.x < -7.43)
+        if (this.transform.position.x < -2.61)
         {
             body.velocity = new Vector2(1 * speed, 0);
         }
-        else if (this.transform.position.x>7.43)
+        else if (this.transform.position.x>2.61)
         {
             body.velocity = new Vector2(-1 * speed, 0);
         }
