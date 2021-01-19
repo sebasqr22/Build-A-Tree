@@ -1,5 +1,9 @@
 package buildatree;
 
+
+
+import java.util.ArrayList;
+
 /**
  * Clase que crea el árbol con los métodos necesarios para el juego
  * y las diferentes rotaciones
@@ -10,6 +14,7 @@ package buildatree;
 public class SplayTree {
     private SplayNode root;
     private int size;
+    private ArrayList<String> datos = new ArrayList<>();
 
     public boolean isEmpty(){
         return root == null;
@@ -206,12 +211,19 @@ public class SplayTree {
         this.size = 0;
     }
     public void recorrer(SplayNode nodo){
-
         if(nodo!=null){
             this.recorrer(nodo.getLeft());
             System.out.println("["+nodo.getDato()+"]");
+            datos.add(Integer.toString(nodo.getDato()));
             this.recorrer(nodo.getRight());
         }
+    }
+
+    public ArrayList<String> getDatos(){
+        recorrer(this.root);
+        ArrayList<String> data = this.datos;
+        this.datos = new ArrayList<>();
+        return data;
     }
 
     public SplayNode getRoot() {

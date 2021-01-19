@@ -45,6 +45,7 @@ public class Server implements Runnable{
     public Server(int jugadores){//inicia el servidor
         partida = new Partida();//crea un nuevo objeto de tipo partida
         arbol = tree_list[random.nextInt(tree_list.length)];
+        this.numjugadores = jugadores;//numero de jugadores reportados
 
         partida.setArbolactual(arbol);//elige el arbol para iniciar la partida
 
@@ -55,9 +56,10 @@ public class Server implements Runnable{
         contenedor = new PlayersTrees();
         contenedor.setArbol(arbol);
         contenedor.comenzar(jugadores);
+        DatosArboles();//envia los datos que contienen los arboles
 
         this.puntajes = new int[]{0,0,0,0};
-        this.numjugadores = jugadores;//numero de jugadores reportados
+
         Controltiempo();//inicia el contador
 
 
@@ -145,10 +147,11 @@ public class Server implements Runnable{
                 enviarToken -=1;
                 cambioarbol-=1;
                 partida.setTiempo(contador);
+                DatosArboles();
+
 
                 if(contenedor.Status()){//si un jugador completó el challenge
                     puntajes[contenedor.getGanador()] += 30;
-
                     //cambia los arboles y resetea el tiempo para el nuevo cambio
 
                     arbol = tree_list[random.nextInt(tree_list.length)];//arbol elegido
@@ -197,6 +200,7 @@ public class Server implements Runnable{
 
                 }
 
+                DatosArboles();
                 new Client(9010, partida);
 
                 partida.setTiempoAcabado(false);
@@ -214,4 +218,24 @@ public class Server implements Runnable{
         contenedor.comenzar(numjugadores);//inicia de nuevo los arboles de los jugadores
     }
 
+    /**
+     * Método que verifica y da los datos de los arboles
+     */
+    public void DatosArboles(){
+        System.out.println("Obteniendo datos de los arboles");
+        if(this.numjugadores == 2){
+            partida.setArbol1(contenedor.getArbolJ1());
+            partida.setArbol2(contenedor.getArbolJ2());
+        }else if(this.numjugadores == 3){
+            partida.setArbol1(contenedor.getArbolJ1());
+            partida.setArbol2(contenedor.getArbolJ2());
+            partida.setArbol3(contenedor.getArbolJ3());
+        }else{
+            partida.setArbol1(contenedor.getArbolJ1());
+            partida.setArbol2(contenedor.getArbolJ2());
+            partida.setArbol3(contenedor.getArbolJ3());
+            partida.setArbol4(contenedor.getArbolJ4());
+        }
+
+    }
 }

@@ -1,11 +1,14 @@
 package buildatree;
 
+import java.util.ArrayList;
+
 /**
  * Clase para ver los nodos derecho e izquierdo
  */
 class Node {
     int key, height;
     Node left, right;
+    
 
     Node(int d) {
         key = d;
@@ -19,6 +22,7 @@ class Node {
 public class AVLTree {
     Node root;
     int size;
+    ArrayList<String> datos = new ArrayList<>();
 
     // Funcion que retorna la altura del arbol
 
@@ -282,12 +286,19 @@ public class AVLTree {
      * Se imprime el orden transversal del árbol
      * @param node
      */
-    void preOrder(Node node) {
+    public void inOrder(Node node) {
         if (node != null) {
+            inOrder(node.left);
             System.out.print(node.key + " ");
-            preOrder(node.left);
-            preOrder(node.right);
+            datos.add(Integer.toString(node.key));
+            inOrder(node.right);
         }
+    }
+    public ArrayList<String> getDatos(){
+        inOrder(this.root);
+        ArrayList<String> data = this.datos;
+        this.datos = new ArrayList<>();
+        return data;
     }
 
     public int getSize() {
@@ -300,5 +311,9 @@ public class AVLTree {
     public void clear(){
         this.root = null;
         this.size = 0;
+    }
+
+    public Node getRoot() {
+        return root;
     }
 }

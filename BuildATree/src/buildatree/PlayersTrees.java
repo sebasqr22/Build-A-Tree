@@ -94,6 +94,23 @@ public class PlayersTrees {
             return false;
         }
     }
+    //Funciones que obtienen el array con los arboles de cada jugador
+    public String[] getArbolJ1(){
+        String data[] = players.get(0).getDatosarbol();
+        return data;
+    }
+    public String[] getArbolJ2(){
+        String data[] = players.get(1).getDatosarbol();
+        return data;
+    }
+    public String[] getArbolJ3(){
+        String data[] = players.get(2).getDatosarbol();
+        return data;
+    }
+    public String[] getArbolJ4(){
+        String data[] = players.get(3).getDatosarbol();
+        return data;
+    }
 
     /***
      * Busca el jugador con el árbol más grande.

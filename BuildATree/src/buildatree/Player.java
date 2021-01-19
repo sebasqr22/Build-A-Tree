@@ -1,5 +1,7 @@
 package buildatree;
 
+import java.util.ArrayList;
+
 public class Player {
     /***
      * Clase para llevar el control de los arboles de los jugadores, funciona como centro de insercion
@@ -16,6 +18,7 @@ public class Player {
 
     SplayTree arbolSplay;
     BSTTree arbolbst;
+    ArrayList<String> datos = new ArrayList<>();
 
 
     /**
@@ -101,6 +104,34 @@ public class Player {
             size = arbolB.getSize();
         }
         return size;
+    }
+
+    /***
+     * Enseña los datos del árbol del jugador
+     * @return un string con los datos del arbol
+     */
+    public String[] getDatosarbol(){
+        System.out.println("Viendo datos");
+        if (arbol.equals("AVL")){
+            datos = avl.getDatos();
+        }
+        else if (arbol.equals("BST")){
+            datos = arbolbst.getDatos();
+        }
+        else if (arbol.equals("SPLAY")){
+            datos = arbolSplay.getDatos();
+        }
+        else {
+            datos = arbolB.getDatos();
+        }
+        String data[] = new String[datos.size()+1];
+        for (int i =0 ; i< datos.size();i++) {
+            data[i] = datos.get(i);
+            System.out.println(datos.get(i));
+        }
+        this.datos = new ArrayList<>();
+
+        return data;
     }
 
     /**

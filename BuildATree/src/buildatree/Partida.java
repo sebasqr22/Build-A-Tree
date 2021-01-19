@@ -6,6 +6,10 @@ public class Partida {
     Boolean tiempoAcabado = false;
     String[] listaajugaadores;
     int[] puntajes;
+    String[] arbol1;
+    String[] arbol2;
+    String[] arbol3;
+    String[] arbol4;
 
     public int getTiempo() {
         return tiempo;
@@ -41,5 +45,21 @@ public class Partida {
 
     public void setPuntajes(int[] puntajes) {
         this.puntajes = puntajes;
+    }
+
+    public void setArbol1(String[] arbol1) {
+        this.arbol1 = arbol1;
+    }
+
+    public void setArbol2(String[] arbol2) {
+        this.arbol2 = arbol2;
+    }
+
+    public void setArbol3(String[] arbol3) {
+        this.arbol3 = arbol3;
+    }
+
+    public void setArbol4(String[] arbol4) {
+        this.arbol4 = arbol4;
     }
 }

@@ -1,5 +1,7 @@
 package buildatree;
 
+import java.util.ArrayList;
+
 /**
  * Clase para crear un árbol B normal
  *
@@ -13,6 +15,8 @@ public class Btree {
 
     private int grado;//el numero minimo de claves
     private int maxclaves;//cantidad maxima de datos
+
+    private ArrayList<String> datos = new ArrayList<>();
 
     /** Contiene un array con los datos del nodo y sus referencias**/
     class Bnode {
@@ -169,8 +173,10 @@ public class Btree {
 
     public void show(Bnode aux){
         assert (aux==null);
+
         for(int i = 0 ; i < aux.size;i++){
             System.out.print(aux.claves[i]+" ");
+            datos.add(Integer.toString(aux.claves[i]));
         }
         if (!aux.leaf){
             for (int i = 0; i<aux.size+1;i++){
@@ -180,10 +186,23 @@ public class Btree {
     }
 
     /**
+     *
+     * @return una lista con los datos del árbol
+     */
+    public ArrayList<String> getDatos(){
+        show(this.root);
+        ArrayList<String> data = this.datos;
+        this.datos = new ArrayList<>();
+        return data;
+    }
+
+    /**
      * Método para limpiar el árbol
      */
     public void clear(){
         this.root = null;
+        this.datos = new ArrayList<>();
+        this.root = new Bnode(0);
         this.size = 0;
     }
 }

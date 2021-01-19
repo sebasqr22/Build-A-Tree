@@ -20,7 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8163276d-0139-4e5b-b6cc-cb5cc7593f2d" name="Default Changelist" comment="Se corrigió el error de los puntos a un solo ganador">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/AVLTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/BuildATree/src/buildatree/AVLTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/BSTTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/BuildATree/src/buildatree/BSTTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/Btree.java" beforeDir="false" afterPath="$PROJECT_DIR$/BuildATree/src/buildatree/Btree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/BuildATree/src/buildatree/Partida.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/BuildATree/src/buildatree/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/PlayersTrees.java" beforeDir="false" afterPath="$PROJECT_DIR$/BuildATree/src/buildatree/PlayersTrees.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/BuildATree/src/buildatree/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BuildATree/src/buildatree/SplayTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/BuildATree/src/buildatree/SplayTree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +72,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.5137931" />
   </component>
-  <component name="RunManager" selected="Application.Test">
+  <component name="RunManager" selected="Application.pruebas">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -114,8 +123,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="pruebas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="buildatree.pruebas" />
+      <module name="Build-A-Tree" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="buildatree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.pruebas" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.VisualServer" />
         <item itemvalue="Application.EnvioRAPIDO" />

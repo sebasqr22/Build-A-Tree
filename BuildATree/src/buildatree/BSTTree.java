@@ -2,12 +2,14 @@ package buildatree;
 
 import buildatree.BSTNode;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class BSTTree {
     private BSTNode root;
     private int size;
+    private ArrayList<String> datos = new ArrayList<>();
 
     //Funcion que verifica si el arbol es vacio o no
     public boolean isEmpty() {
@@ -87,10 +89,18 @@ public class BSTTree {
     }
     //Funcion para recorrer el arbol en orden dado una raiz
     private void doInOrder(BSTNode root) {
-        if(root == null) return;
+        if(root == null) return ;
         doInOrder(root.getLeft());
         System.out.print(root.getData()+" ");
+        datos.add(Integer.toString(root.getData()));//añade los datos al array
         doInOrder(root.getRight());
+    }
+
+    public ArrayList<String> getDatos(){
+        doInOrder(this.root);
+        ArrayList<String>data = this.datos;
+        this.datos = new ArrayList<>();
+        return data;
     }
     public void Clear(){
         this.root = null;
