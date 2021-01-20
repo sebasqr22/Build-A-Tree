@@ -23,7 +23,7 @@ public class Server implements Runnable{
     public static Gson gson = new Gson();//conversor para json
     public Partida partida;//partida del servidor
 
-    int contador = 210;
+    int contador = 40;
     int enviarToken = 2;
     int cambioarbol = 20;
     int numjugadores;//total de jugadores en partida
@@ -63,6 +63,8 @@ public class Server implements Runnable{
         Controltiempo();//inicia el contador
 
 
+        Thread nuevoHilo = new Thread(this::SalirPartida);
+        nuevoHilo.start();
     }
 
     /**
@@ -236,5 +238,21 @@ public class Server implements Runnable{
             partida.setArbol4(contenedor.getArbolJ4());
         }
 
+    }
+
+    public void SalirPartida(){
+        ServerAux initserver = new ServerAux(9004);
+
+        String valor = initserver.Iniciar();
+
+        if(valor.contains("Cerrar")){
+            this.contador = 1;
+            System.out.println("Cerrando partida por pausa a menu");
+            try {
+                initserver.Cerrar();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
